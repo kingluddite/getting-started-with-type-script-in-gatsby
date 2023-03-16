@@ -15,12 +15,13 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
     "test": "vitest",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -78,7 +79,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "gatsby-plugin-eslint": "^4.0.3",
-    "husky": "8.0.3",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "3.0.0",
     "jsdom": "21.1.0",
     "lint-staged": "13.2.0",

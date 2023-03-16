@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
 import HeroHeading from '../components/molecules/HeroHeading';
+import Logo from '../components/atoms/Logo';
 // import { list, listItem} from '../styles/index.css';
 
 type DataType = {
@@ -21,6 +22,8 @@ const HomePage = ({ data }: PageProps<DataType>) => {
   return (
     <main>
       <HeroHeading home>
+        <Logo size="large" />
+        <Logo size="textOnly" />
         <p>{subheading}</p>
       </HeroHeading>
       {/* <h1>{subheading}</h1> */}
