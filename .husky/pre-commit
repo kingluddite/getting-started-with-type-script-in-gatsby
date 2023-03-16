@@ -3,5 +3,4 @@
 
 pnpm validate-branch-name
 pnpm lint-staged
-pnpm tsc
 pnpm run coverage

@@ -11,6 +11,7 @@
 * TypeScript
 * Prettier
 * Eslint
+* validate-branch-name
 * Local config of VS Code Settings
 
 ## Resources used to Build this
