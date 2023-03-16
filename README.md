@@ -4,8 +4,17 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal TypeScript Starter
+  Gatsby TypeScript Starter
 </h1>
+
+## Stuff this app uses
+* TypeScript
+* Prettier
+* Eslint
+* Local config of VS Code Settings
+
+## Resources used to Build this
+* [Setup for Prettier/Eslint](https://dev.to/kornil/how-to-setup-gatsby-with-typescript-and-eslint-prettier-3nb3)
 
 ## 🚀 Quick start
 
