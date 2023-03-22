@@ -20,7 +20,7 @@ type DataType = {
 const HomePage = ({ data }: PageProps<DataType>) => {
   const { subheading } = data.homePage;
   return (
-    <main>
+    <>
       <HeroHeading home>
         <Logo size="large" />
         <Logo size="textOnly" />
@@ -32,7 +32,7 @@ const HomePage = ({ data }: PageProps<DataType>) => {
         <li className={listItem} key={person.name}>{person.first_name} {person.last_name}</li>
       ))}
     </ul> */}
-    </main>
+    </>
   );
 };
 
