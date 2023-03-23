@@ -36,11 +36,13 @@
   "dependencies": {
     "@vanilla-extract/css": "^1.10.0",
     "@vanilla-extract/webpack-plugin": "^2.2.0",
+    "babel-plugin-styled-components": "2.0.7",
     "dotenv": "^16.0.3",
     "gatsby": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-pnpm": "1.2.10",
     "gatsby-plugin-react-svg": "3.3.0",
+    "gatsby-plugin-styled-components": "6.8.0",
     "gatsby-plugin-vanilla-extract": "^4.0.1",
     "gatsby-source-sanity": "^7.6.3",
     "react": "^18.2.0",

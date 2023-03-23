@@ -48,6 +48,7 @@ const config: GatsbyConfig = {
         token: process.env.SANITY_TOKEN,
       },
     },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-eslint`,
       options: {
