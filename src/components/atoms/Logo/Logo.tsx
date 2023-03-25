@@ -1,6 +1,6 @@
 import React from 'react';
-import AEFLogoLight from '../../svg/aef-lightmode-logo.svg';
-import AEFTextLogoLight from '../../svg/aef-text-lightmode-logo.svg';
+import AEFLogoLight from '../../../assets/svg/aef-lightmode-logo.svg';
+import AEFTextLogoLight from '../../../assets/svg/aef-text-lightmode-logo.svg';
 import {
   StyledLogoTextOnly,
   StyledLogoMedium,
