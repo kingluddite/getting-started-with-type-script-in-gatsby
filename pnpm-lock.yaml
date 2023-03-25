@@ -50,6 +50,7 @@ specifiers:
   identity-obj-proxy: 3.0.0
   jsdom: 21.1.0
   lint-staged: 13.2.0
+  normalize.css: 8.0.1
   prettier: ^2.8.4
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -75,6 +76,7 @@ dependencies:
   gatsby-plugin-styled-components: 6.8.0_cw76bxyibsqhorjlanxsppfuj4
   gatsby-plugin-vanilla-extract: 4.0.1_o5osx6zrau6uh52qchb2dfjw2m
   gatsby-source-sanity: 7.6.3_w5xpikddulzbgomf2bdaeo6aau
+  normalize.css: 8.0.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-helmet: 6.1.0_react@18.2.0
@@ -10589,6 +10591,10 @@ packages:
   /normalize-url/8.0.0:
     resolution: {integrity: sha512-uVFpKhj5MheNBJRTiMZ9pE/7hD1QTeEvugSJW/OmLzAp78PB5O6adfMNTvmfKhXBkvCzC+rqifWcVYpGFwTjnw==}
     engines: {node: '>=14.16'}
+
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+    dev: false
 
   /npm-run-path/2.0.2:
     resolution: {integrity: sha512-lJxZYlT4DW/bRUtFh1MQIWqmLwQfAxnqWG4HhEdjMlkrJYnJn0Jrr2u3mgxqaWsdiBc76TYkTG/mhrnYTuzfHw==}
