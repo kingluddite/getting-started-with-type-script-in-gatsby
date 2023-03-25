@@ -1,5 +1,5 @@
 import React from 'react';
-// import 'normalize.css'; // reset
+import 'normalize.css'; // reset
 // import { ThemeProvider } from 'styled-components';
 // import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 // import { Helmet } from 'react-helmet';
