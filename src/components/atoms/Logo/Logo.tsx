@@ -5,7 +5,7 @@ import {
   StyledLogoTextOnly,
   StyledLogoMedium,
   StyledLogoLarge,
-} from './LogoStyles';
+} from './styles';
 
 function Logo({ mode = `light`, size = `medium` }) {
   if (mode === `light`) {

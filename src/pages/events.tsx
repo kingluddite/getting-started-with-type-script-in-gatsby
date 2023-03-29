@@ -71,7 +71,7 @@ export const query = graphql`
     }
     eventBlogs: allSanityEventBlog(
       filter: { eventDate: {} }
-      sort: { order: ASC, fields: eventDate }
+      sort: { eventDate: ASC }
     ) {
       totalCount
       nodes {

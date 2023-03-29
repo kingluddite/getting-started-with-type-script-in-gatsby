@@ -1,4 +1,4 @@
-export const navLinkData = {
+const navLinkData = {
   programs: [
     {
       type: `gatsby`,
@@ -88,3 +88,5 @@ export const navLinkData = {
     },
   ],
 };
+
+export default navLinkData;

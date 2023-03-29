@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // data
-import { navLinkData } from '../../../utils/data/nav-links';
+import navLinkData from '../../../utils/data/nav-links';
 // styles
-import { StyledFooter } from './FooterStyles';
+import { StyledFooter } from './styles';
 // images
 // import AEFLogoLight from '../../../assets/svg/aef-lightmode-logo.svg';
 // components

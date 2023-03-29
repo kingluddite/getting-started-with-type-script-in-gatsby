@@ -3,7 +3,7 @@ import {
   StyledHeroHeading,
   StyledHeroHeadingContent,
   StyledHeroHeadingContentHome,
-} from './HeroHeadingStyles';
+} from './styles';
 // import wing from '../images/wing.png';
 
 interface Props {

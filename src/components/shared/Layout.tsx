@@ -1,63 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'normalize.css'; // reset
 // import { ThemeProvider } from 'styled-components';
 // import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
-// import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import Footer from './Footer';
-// import Nav from './Nav';
+import Nav from './Nav';
 // import ScrollToTopButton from './atoms/ScrollToTopButton';
-// import GlobalStyles from '../styles/GlobalStyles';
+import GlobalStyles from '../../styles/GlobalStyles';
 // import Typography from '../styles/Typography';
 // import Theme from '../styles/theme';
 // import LayoutContainer from './layout/LayoutContainer';
+
+type LayoutProps = {
+  children: React.ReactNode;
+};
 // // import stripes from '../assets/images/stripes.svg';
 // import '@reach/skip-nav/styles.css';
 
 // eslint-disable-next-line react/prop-types
-function Layout({ children }) {
+function Layout({ children }: LayoutProps) {
   // function Layout() {
-  // const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // useEffect(() => {
-  //   setMenuOpen(false);
-  // }, [location]);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, []);
 
   return (
     <>
-      {/* <Helmet>
+      <Helmet>
         <body
           style={menuOpen ? `margin: 0; height: 100%; overflow: hidden` : null}
         />
-      </Helmet> */}
-      {/* <ThemeProvider theme={Theme}>
-        <GlobalStyles />
-        <Typography />
-        <LayoutContainer
+      </Helmet>
+      {/* <ThemeProvider theme={Theme}> */}
+      <GlobalStyles />
+      {/* <Typography /> */}
+      {/* <LayoutContainer
           style={{
             position: `relative`,
             zIndex: 10,
           }}
-        >
-          <div>
-            <SkipNavLink />
-            <Nav
-              location={location}
-              menuOpen={menuOpen}
-              setMenuOpen={setMenuOpen}
-            />
-            <SkipNavContent />
-          </div>
-        </LayoutContainer>
-        <main
-          style={{
-            display: menuOpen ? `none` : `block`,
-            position: `relative`,
-            zIndex: 0,
-          }}
-        >
-          {children}
-        </main>
-      </ThemeProvider> */}
+        > */}
+      <div>
+        {/* <SkipNavLink /> */}
+        <Nav
+          location={location}
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
+        {/* <SkipNavContent /> */}
+      </div>
+      {/* </LayoutContainer> */}
+      <main
+        style={{
+          display: menuOpen ? `none` : `block`,
+          position: `relative`,
+          zIndex: 0,
+        }}
+      >
+        {children}
+      </main>
+      {/* </ThemeProvider> */}
       {/* <div className="footer-wrapper">
         <LayoutContainer
           className={
