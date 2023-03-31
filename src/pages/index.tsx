@@ -1,7 +1,11 @@
+// npm
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
+
+// components
 import HeroHeading from '../components/molecules/HeroHeading';
 import Logo from '../components/atoms/Logo';
+import Button from '../components/atoms/buttons/Button';
 // import { list, listItem} from '../styles/index.css';
 
 type DataType = {
@@ -18,20 +22,25 @@ type DataType = {
 };
 // const IndexPage = ({ data: { allPerson }}: PageProps<DataType>) => (
 const HomePage = ({ data }: PageProps<DataType>) => {
-  const { subheading } = data.homePage;
+  const { subheading, headingOneButtonPath, headingOneButtonText } =
+    data.homePage;
   return (
     <>
       <HeroHeading home>
         <Logo size="large" />
         <Logo size="textOnly" />
         <p>{subheading}</p>
+        <div
+          style={{
+            display: `flex`,
+            gap: `var(--size-dual-nudge)`,
+          }}
+        >
+          <Button actionType="link" link={headingOneButtonPath}>
+            {headingOneButtonText}
+          </Button>
+        </div>
       </HeroHeading>
-      {/* <h1>{subheading}</h1> */}
-      {/* <ul className={list}>
-      {allPerson.nodes.map(person => (
-        <li className={listItem} key={person.name}>{person.first_name} {person.last_name}</li>
-      ))}
-    </ul> */}
     </>
   );
 };
