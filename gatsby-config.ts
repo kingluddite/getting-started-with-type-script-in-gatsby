@@ -19,12 +19,14 @@ dotenv.config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Getting Started with TypeScript in Gatsby`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Animation Educators Forum`,
+    description: `The Animation Educator's Forum is dedicated to the preservation and promotion of animation through education. Our members, with their diverse backgrounds in both the animation and educational fields, are focused on extending their knowledge and experience to others within the burgeoning animation community, worldwide.`,
+    siteUrl: `https://animationeducatorsforum.org/`,
+    author: `Oblique`,
+    twitterUsername: `@aeforum`,
+    youtube: `tbd`,
+    instagram: `tbd`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-vanilla-extract`,
