@@ -4,14 +4,14 @@ import MinorButton from '../MinorButton';
 import OutlineButton from '../OutlineButton';
 import SolidButton from '../SolidButton';
 
-type ButtonProps = {
+interface ButtonProps {
   children: ReactNode;
   disable?: boolean;
-  action: any;
-  link: string;
-  theme: string;
+  action?: any;
+  link?: string;
+  theme?: string;
   actionType: string;
-};
+}
 
 export default function Button({
   link,

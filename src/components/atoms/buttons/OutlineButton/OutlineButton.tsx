@@ -9,12 +9,12 @@ import {
   StyledAnchorOutline,
 } from './styles';
 
-type OutlineButtonProps = {
+interface OutlineButtonProps {
   action: any;
   actionType: string;
   children: ReactNode;
-  link: string;
-};
+  link?: string;
+}
 
 function OutlineButton({
   action = () => false,

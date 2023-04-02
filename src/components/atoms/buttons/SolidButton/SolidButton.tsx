@@ -9,12 +9,12 @@ import {
   StyledButtonPrimary,
 } from './styles';
 
-type SolidButtonProps = {
+interface SolidButtonProps {
   action: any;
   actionType: string;
   children: ReactNode;
-  link: string;
-};
+  link?: string;
+}
 
 function SolidButton({
   actionType,

@@ -13,14 +13,14 @@ import {
   StyledLinkMinor,
 } from './styles';
 
-type MinorButtonProps = {
+interface MinorButtonProps {
   action: any;
   actionType: string;
   children: ReactNode;
   disable?: boolean;
-  link: string;
+  link?: string;
   as?: any;
-};
+}
 
 export default function MinorButton({
   actionType,
