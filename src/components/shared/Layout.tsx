@@ -80,7 +80,6 @@ function Layout({ children }: LayoutProps) {
           <Footer />
         </LayoutContainer>
       </div>
-      {children}
       <ScrollToTopButton />
     </>
   );
