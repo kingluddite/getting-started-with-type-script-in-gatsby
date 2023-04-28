@@ -44,3 +44,8 @@ export const StyledPostContainer = styled.div`
   flex-direction: column;
   gap: var(--size-1);
 `;
+
+export const StyledFlexContainer = styled.div`
+  display: flex;
+  gap: var(--size-dual-nudge);
+`;

@@ -30,6 +30,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-vanilla-extract`,
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-react-svg`,

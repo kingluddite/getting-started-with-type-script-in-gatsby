@@ -13,6 +13,18 @@
 * Eslint
 * validate-branch-name
 * Local config of VS Code Settings
+* vitest
+* swap out npm for pnpm
+
+## Start app
+`$ pnpm start`
+
+* I have a local alias script to run using `$ pnst`
+
+
+
+## Install dependencies
+`$ pnpm i`
 
 ## Resources used to Build this
 * [Setup for Prettier/Eslint](https://dev.to/kornil/how-to-setup-gatsby-with-typescript-and-eslint-prettier-3nb3)

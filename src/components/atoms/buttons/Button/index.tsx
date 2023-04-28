@@ -13,7 +13,7 @@ interface ButtonProps {
   actionType: string;
 }
 
-export default function Button({
+function Button({
   link,
   action,
   theme,
@@ -61,3 +61,5 @@ export default function Button({
       );
   }
 }
+
+export default Button;
