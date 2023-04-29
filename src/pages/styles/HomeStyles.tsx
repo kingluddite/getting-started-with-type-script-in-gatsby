@@ -39,12 +39,6 @@ export const StyledLatestNewsContainer = styled.section`
   width: 100%;
 `;
 
-export const StyledPostContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-1);
-`;
-
 export const StyledFlexContainer = styled.div`
   display: flex;
   gap: var(--size-dual-nudge);

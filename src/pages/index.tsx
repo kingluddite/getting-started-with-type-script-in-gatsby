@@ -21,6 +21,7 @@ import LayoutContainer from '../components/shared/layout/LayoutContainer';
 import MediumCard from '../components/molecules/cards/MediumCard';
 import Gallery from '../components/atoms/images/Gallery';
 import type { GalleryProps } from '@/components/atoms/images/Gallery/Gallery';
+import EventPostList from '../components/molecules/blogs/EventPostList';
 
 // Import styled components
 import {
@@ -29,6 +30,7 @@ import {
   StyledSectionTitle,
   StyledProvideCardGrid,
   StyledFlexContainer,
+  StyledLatestNewsContainer,
 } from './styles/HomeStyles';
 
 // Define the expected shape of the data returned by the GraphQL query
@@ -58,6 +60,7 @@ type DataProps = {
         alt: string;
       };
     }>;
+    newsManyHeading: string;
     hasGallery: boolean;
     galleryManyBlock: Array<{
       asset: {
@@ -67,10 +70,12 @@ type DataProps = {
       alt: string;
     }>;
   };
+  latestNewsBlog: any;
+  eventBlogs: any;
 };
 
 // Define the HomePage component
-const HomePage = ({ data: { homePage } }: PageProps<DataProps>) => {
+const HomePage = ({ data: { homePage, eventBlogs } }: PageProps<DataProps>) => {
   // Extract the required data from the props object
   const {
     subheading,
@@ -80,9 +85,13 @@ const HomePage = ({ data: { homePage } }: PageProps<DataProps>) => {
     showHideVideoBtnText,
     whatWeProvideManyHeading,
     whatWeProvideBlock,
+    newsManyHeading,
     hasGallery,
     galleryManyBlock,
   } = homePage;
+
+  // const latestNewsBlog = data.latestNewsBlog.nodes;
+  // const events = data.eventBlogs.nodes;
 
   // const latestNewsBlog = data.latestNewsBlog.nodes;
   // const events = data.eventBlogs.nodes;
@@ -213,6 +222,28 @@ const HomePage = ({ data: { homePage } }: PageProps<DataProps>) => {
           </StyledProvideCardGrid>
         </StyledSection>
         <StyledSection>
+          <StyledSectionTitle>{newsManyHeading}</StyledSectionTitle>
+          <StyledLatestNewsContainer>
+            {/* <StyledPostContainer>
+              {latestNewsBlog.map((l) => (
+                <PostCard
+                  key={l.id}
+                  image={l?.newsBlogImg?.asset?.gatsbyImageData}
+                  altText={l?.newsBlogImg?.alt || ``}
+                  tagText={l.newsTag}
+                  type={l._type}
+                  date={l.publishDate}
+                  to={`news/${l.slug.current}`}
+                  title={l.newsBlogTitle}
+                  // description={l.newsContentExcerpt}
+                />
+              ))}
+            </StyledPostContainer> */}
+            <EventPostList eventBlogs={eventBlogs} />
+          </StyledLatestNewsContainer>
+        </StyledSection>
+
+        <StyledSection>
           {hasGallery && galleryManyBlock ? ( // Conditional rendering of a Gallery component if there's a gallery available
             <Gallery
               images={
@@ -277,6 +308,56 @@ export const query = graphql`
           right
           left
           bottom
+        }
+      }
+    }
+    latestNewsBlog: allSanityNews(limit: 4, sort: { publishDate: DESC }) {
+      nodes {
+        id
+        _type
+        newsTag
+        newsBlogTitle: newsPostTitle
+        newsContentExcerpt
+        slug {
+          current
+        }
+        newsBlogImg: pageImageBlock {
+          alt
+          asset {
+            gatsbyImageData(width: 200, height: 134)
+            url
+          }
+        }
+        publishDate(formatString: "LL")
+      }
+    }
+    eventBlogs: allSanityEventBlog(sort: { eventDate: ASC }) {
+      totalCount
+      nodes {
+        id
+        eventTitle
+        eventExcerpt
+        eventDate(formatString: "LL")
+        slug {
+          current
+        }
+        eventImg: eventImageBlock {
+          alt
+          asset {
+            gatsbyImageData
+          }
+          crop {
+            top
+            right
+            left
+            bottom
+          }
+          hotspot {
+            y
+            x
+            width
+            height
+          }
         }
       }
     }
