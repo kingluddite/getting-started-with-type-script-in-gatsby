@@ -32,6 +32,7 @@ import {
   StyledFlexContainer,
   StyledLatestNewsContainer,
 } from './styles/HomeStyles';
+import LatestNewsList from '../components/molecules/blogs/LatestNewsList';
 
 // Define the expected shape of the data returned by the GraphQL query
 type DataProps = {
@@ -75,7 +76,9 @@ type DataProps = {
 };
 
 // Define the HomePage component
-const HomePage = ({ data: { homePage, eventBlogs } }: PageProps<DataProps>) => {
+const HomePage = ({
+  data: { homePage, latestNewsBlog, eventBlogs },
+}: PageProps<DataProps>) => {
   // Extract the required data from the props object
   const {
     subheading,
@@ -224,21 +227,9 @@ const HomePage = ({ data: { homePage, eventBlogs } }: PageProps<DataProps>) => {
         <StyledSection>
           <StyledSectionTitle>{newsManyHeading}</StyledSectionTitle>
           <StyledLatestNewsContainer>
-            {/* <StyledPostContainer>
-              {latestNewsBlog.map((l) => (
-                <PostCard
-                  key={l.id}
-                  image={l?.newsBlogImg?.asset?.gatsbyImageData}
-                  altText={l?.newsBlogImg?.alt || ``}
-                  tagText={l.newsTag}
-                  type={l._type}
-                  date={l.publishDate}
-                  to={`news/${l.slug.current}`}
-                  title={l.newsBlogTitle}
-                  // description={l.newsContentExcerpt}
-                />
-              ))}
-            </StyledPostContainer> */}
+            {/* short news list */}
+            <LatestNewsList latestNewsBlog={latestNewsBlog} />
+            {/* short events list */}
             <EventPostList eventBlogs={eventBlogs} />
           </StyledLatestNewsContainer>
         </StyledSection>
