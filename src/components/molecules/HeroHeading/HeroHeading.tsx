@@ -4,7 +4,7 @@ import {
   StyledHeroHeadingContent,
   StyledHeroHeadingContentHome,
 } from './styles';
-// import wing from '../images/wing.png';
+import wing from '../../../assets/images/wing.png';
 
 interface Props {
   children?: ReactNode;
@@ -16,9 +16,8 @@ export default function HeroHeading({ children, home = false }: Props) {
     <StyledHeroHeading>
       {home ? (
         <>
-          add images
-          {/* <img src={wing} className="wing wing-left" alt="" /> */}
-          {/* <img src={wing} className="wing wing-right" alt="" /> */}
+          <img src={wing} className="wing wing-left" alt="" />
+          <img src={wing} className="wing wing-right" alt="" />
         </>
       ) : null}
       <div className="grad grad-right" />
