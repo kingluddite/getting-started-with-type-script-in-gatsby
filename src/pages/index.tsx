@@ -14,14 +14,15 @@ import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 
 // Import custom components
 import HeroHeading from '../components/molecules/HeroHeading';
-import Logo from '../components/atoms/Logo';
-import Button from '../components/atoms/buttons/Button';
-import SEO from '../components/shared/SEO';
-import LayoutContainer from '../components/shared/layout/LayoutContainer';
-import MediumCard from '../components/molecules/cards/MediumCard';
-import Gallery from '../components/atoms/images/Gallery';
-import type { GalleryProps } from '@/components/atoms/images/Gallery/Gallery';
-import EventPostList from '../components/molecules/blogs/EventPostList';
+import Logo from '@components/atoms/Logo';
+import Button from '@components/atoms/buttons/Button';
+import SEO from '@components/shared/SEO';
+import LayoutContainer from '@components/shared/layout/LayoutContainer';
+import MediumCard from '@components/molecules/cards/MediumCard';
+import Gallery from '@components/atoms/images/Gallery';
+import type { GalleryProps } from '@components/atoms/images/Gallery/Gallery';
+import EventPostList from '@components/molecules/blogs/EventPostList';
+import LatestNewsList from '@components/molecules/blogs/LatestNewsList';
 
 // Import styled components
 import {
@@ -32,10 +33,9 @@ import {
   StyledFlexContainer,
   StyledLatestNewsContainer,
 } from './styles/HomeStyles';
-import LatestNewsList from '../components/molecules/blogs/LatestNewsList';
 
 // Define the expected shape of the data returned by the GraphQL query
-type DataProps = {
+type HomePageQueryData = {
   homePage: {
     name: string;
     subheading: string;
@@ -78,7 +78,7 @@ type DataProps = {
 // Define the HomePage component
 const HomePage = ({
   data: { homePage, latestNewsBlog, eventBlogs },
-}: PageProps<DataProps>) => {
+}: PageProps<HomePageQueryData>) => {
   // Extract the required data from the props object
   const {
     subheading,
@@ -358,7 +358,7 @@ export const query = graphql`
 export default HomePage;
 
 // a helper function Head used to generate SEO and include a script tag for SnapWidget
-export function Head({ data }: HeadProps<DataProps>) {
+export function Head({ data }: HeadProps<HomePageQueryData>) {
   const { name } = data.homePage;
   return (
     <SEO title={name}>

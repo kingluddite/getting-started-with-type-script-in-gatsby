@@ -14,12 +14,14 @@ import {
 } from './styles';
 
 interface MinorButtonProps {
-  action: any;
+  action?: any;
   actionType: string;
   children: ReactNode;
   disable?: boolean;
   link?: string;
   as?: any;
+  className?: string;
+  theme?: string;
 }
 
 export default function MinorButton({

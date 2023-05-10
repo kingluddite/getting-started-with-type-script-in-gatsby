@@ -31,6 +31,8 @@ const config: GatsbyConfig = {
   plugins: [
     `gatsby-plugin-vanilla-extract`,
     `gatsby-plugin-typescript`,
+    // without this, errors on build with tsconfig!!!
+    `gatsby-plugin-tsconfig-paths`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-react-svg`,

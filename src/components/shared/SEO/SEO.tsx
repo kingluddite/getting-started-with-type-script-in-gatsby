@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { useSiteMetadata } from '../../../hooks/use-site-metadata';
 
 type SEOProps = {
-  children: ReactNode;
+  children?: ReactNode;
   description?: string;
   image?: string;
   location?: any;
