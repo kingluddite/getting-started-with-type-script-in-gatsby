@@ -5,6 +5,7 @@ import { Menu, MenuLink } from '@reach/menu-button';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 // styles
+import '@reach/menu-button/styles.css';
 import {
   StyledMenuButton,
   StyledFontAwesomeIcon,
