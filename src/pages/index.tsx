@@ -6,14 +6,13 @@ import ReactPlayer from 'react-player';
 import { graphql } from 'gatsby';
 import type { PageProps, HeadProps } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
 
 // Import Font Awesome icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 
 // Import custom components
-import HeroHeading from '../components/molecules/HeroHeading';
+import HeroHeading from '@components/molecules/HeroHeading';
 import Logo from '@components/atoms/Logo';
 import Button from '@components/atoms/buttons/Button';
 import SEO from '@components/shared/SEO';
@@ -24,7 +23,7 @@ import type { GalleryProps } from '@components/atoms/images/Gallery/Gallery';
 import EventPostList from '@components/molecules/blogs/EventPostList';
 import LatestNewsList from '@components/molecules/blogs/LatestNewsList';
 
-// Import styled components
+// styles
 import {
   StyledSection,
   PlayerWrapper,
@@ -32,48 +31,10 @@ import {
   StyledProvideCardGrid,
   StyledFlexContainer,
   StyledLatestNewsContainer,
-} from './styles/HomeStyles';
+} from './home/styles';
 
-// Define the expected shape of the data returned by the GraphQL query
-type HomePageQueryData = {
-  homePage: {
-    name: string;
-    subheading: string;
-    headingOneButtonPath: string;
-    headingOneButtonText: string;
-    vimeoId: string;
-    videoOpened: boolean;
-    videoError: boolean;
-    playing: boolean;
-    showHideVideoBtnText: boolean;
-    whatWeProvideManyHeading: string;
-    whatWeProvideBlock: Array<{
-      id: string;
-      link: string;
-      whatWeProvideHeading: string;
-      callToActionLink: string;
-      tagName: string;
-      pageImageBlock: {
-        asset: {
-          id: string;
-          gatsbyImageData: IGatsbyImageData;
-        };
-        alt: string;
-      };
-    }>;
-    newsManyHeading: string;
-    hasGallery: boolean;
-    galleryManyBlock: Array<{
-      asset: {
-        id: string;
-        gatsbyImageData: IGatsbyImageData;
-      };
-      alt: string;
-    }>;
-  };
-  latestNewsBlog: any;
-  eventBlogs: any;
-};
+// types
+import type { HomePageQueryData } from './home/types';
 
 // Define the HomePage component
 const HomePage = ({
@@ -92,12 +53,6 @@ const HomePage = ({
     hasGallery,
     galleryManyBlock,
   } = homePage;
-
-  // const latestNewsBlog = data.latestNewsBlog.nodes;
-  // const events = data.eventBlogs.nodes;
-
-  // const latestNewsBlog = data.latestNewsBlog.nodes;
-  // const events = data.eventBlogs.nodes;
 
   // Set up state for the video player
   const [videoOpened, setVideoOpened] = useState(false);
@@ -213,7 +168,7 @@ const HomePage = ({
                     />
                   ) : (
                     <StaticImage
-                      src="./img/grants_home_card.jpeg"
+                      src="./home/grants_home_card.jpeg"
                       alt={s.pageImageBlock.alt}
                       height={134}
                       width={282}

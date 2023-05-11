@@ -30,6 +30,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-vanilla-extract`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     // without this, errors on build with tsconfig!!!
     `gatsby-plugin-tsconfig-paths`,

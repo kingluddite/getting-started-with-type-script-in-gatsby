@@ -1,96 +1,24 @@
 import React from 'react';
-import { PageProps, HeadProps, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import type { PageProps, HeadProps } from 'gatsby';
 
 // components
 import HeroHeading from '@components/molecules/HeroHeading';
 import Logo from '@components/atoms/Logo';
 import SEO from '@components/shared/SEO';
-
-// styles
-import { StyledSection, StyledSectionTitle } from './styles/AboutStyles';
-import ImageContainer from '@components/atoms/images/ImageContainer';
 import LayoutContainer from '@components/shared/layout/LayoutContainer';
 import Gallery from '@components/atoms/images/Gallery';
 import ContentBlock from '@components/molecules/ContentBlock';
 import BoardMemberCard from '@components/molecules/cards/BoardMemberCard';
 
-type AboutPageQueryData = {
-  aboutPage: {
-    name: string;
-    headingOne: string;
-    subheading: string;
-    headingTwo: string;
-    whoWeAreImg: {
-      asset: {
-        gatsbyImageData: any;
-      };
-      alt: string;
-    };
-    missionTextBlock: string;
-    quoteManyBlock: Array<{
-      id: string;
-      quoteContent: string;
-      quoteAuthor: string;
-    }>;
-    boardMemberManyHeading: string;
-    boardMemberBlock: Array<{
-      bioImg: {
-        asset: {
-          gatsbyImageData: any;
-        };
-        alt: string;
-      };
-      bioHeading: string;
-      callToAction: string;
-      callToActionLink: string;
-      id: string;
-      fullName: string;
-      jobTitle: string;
-      expertise: string;
-      bioTextBlock: string;
-    }>;
-    galleryManyBlock: {
-      id: string;
-      alt?: string;
-      asset: {
-        id: string;
-        gatsbyImageData: any;
-      };
-      crop: {
-        top: number;
-        right: number;
-        left: number;
-        bottom: number;
-      };
-      hotspot: {
-        y: number;
-        x: number;
-        width: number;
-        height: number;
-      };
-    }[];
-    hasGallery: boolean;
-    pageImageBlock: {
-      alt: string;
-      asset: {
-        id: string;
-        gatsbyImageData: any;
-      };
-      hotspot: {
-        y: number;
-        x: number;
-        width: number;
-        height: number;
-      };
-      crop: {
-        top: number;
-        right: number;
-        left: number;
-        bottom: number;
-      };
-    };
-  };
-};
+// styles
+import { StyledSection, StyledSectionTitle } from './styles';
+
+// images
+import ImageContainer from '@components/atoms/images/ImageContainer';
+
+// types
+import { AboutPageQueryData, QuoteBlock, BoardMemberBlock } from './types';
 
 const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
   const {
@@ -127,7 +55,7 @@ const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
         <StyledSection>
           {quoteManyBlock && (
             <ContentBlock>
-              {quoteManyBlock.map((q) => (
+              {quoteManyBlock.map((q: QuoteBlock) => (
                 <div key={q.id} style={{ textAlign: `center` }}>
                   <p>
                     <em>{q.quoteContent}</em>
@@ -142,7 +70,7 @@ const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
         </StyledSection>
         <StyledSection>
           <StyledSectionTitle>{boardMemberManyHeading}</StyledSectionTitle>
-          {boardMemberBlock.map((b) => (
+          {boardMemberBlock.map((b: BoardMemberBlock) => (
             <BoardMemberCard key={b.id} data={b} />
           ))}
         </StyledSection>
@@ -153,6 +81,14 @@ const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
     </>
   );
 };
+
+export default AboutPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<AboutPageQueryData>) {
+  const { name } = data.aboutPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query AboutPageQuery {
@@ -244,11 +180,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default AboutPage;
-
-// a helper function Head used to generate SEO
-export function Head({ data }: HeadProps<AboutPageQueryData>) {
-  const { name } = data.aboutPage;
-  return <SEO title={name}></SEO>;
-}

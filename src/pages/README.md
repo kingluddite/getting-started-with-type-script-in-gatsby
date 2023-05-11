@@ -1,4 +1,14 @@
+# gatsby pages (GP)
+
+you can't separate the graphql into a separate file. i tried for hours and not possible
+
+## I did create folders for GP
+
+- which helps with modularization
+- but i had to have the home page as index.tsx in the root of the pages folder. I invested hours to put it in src/pages/home/index.tsx but this didn't work - i tried unsuccessfully to do this and compromised by keeping it in the pages root (index.tsx) and have a "home" folder with types, images and styles
+
 # modularizing pages in gatsby
+
 ## you can move the GraphQL query to its own file and import it into your Gatsby page component. Here's an example of how you can do it:
 
 1. Create a separate file for your GraphQL query, for example, aboutPageQuery.ts:
@@ -130,6 +140,7 @@ If the page requires a GraphQL query, create a new file named query.graphql insi
 Import the GraphQL query into the index.js or index.tsx file and use it to fetch data for the page.
 
 ## example for about page
+
 For example, if you want to create a Gatsby page for the /about URL path with styled-components and a GraphQL query, you could follow these steps:
 
 Create a new folder named about under src/pages.
@@ -172,7 +183,7 @@ export const query = graphql`
 export default AboutPage;
 ```
 
-* Create a new file named query.graphql in the about folder and write the GraphQL query to fetch data for the page.
+- Create a new file named query.graphql in the about folder and write the GraphQL query to fetch data for the page.
 
 ```
 query AboutPageQuery {
@@ -184,7 +195,7 @@ query AboutPageQuery {
 }
 ```
 
-* Import the GraphQL query into the index.js or index.tsx file and use it to fetch data for the page.
+- Import the GraphQL query into the index.js or index.tsx file and use it to fetch data for the page.
 
 ```
 import React from 'react';
@@ -266,8 +277,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 };
 ```
-* 
-Make sure to adjust the paths and file names to match your project structure.
+
+- Make sure to adjust the paths and file names to match your project structure.
 
 ```
 src/
@@ -294,7 +305,7 @@ src/
 
 Importing Gatsby page queries is more tricky than importing GraphQL into components because Gatsby page queries are executed at build time, not at runtime like regular GraphQL queries in components. This means that the data returned by a page query is not available until after the build process completes.
 
-To work around this, Gatsby requires that page queries be placed inside the pages themselves, rather than in separate GraphQL files. This way, Gatsby knows exactly where to find each page query and can execute them during the build process. 
+To work around this, Gatsby requires that page queries be placed inside the pages themselves, rather than in separate GraphQL files. This way, Gatsby knows exactly where to find each page query and can execute them during the build process.
 
 While it is possible to extract page queries to separate files, it requires some additional configuration and setup to ensure that Gatsby can still find and execute them during the build process.
 
@@ -309,4 +320,3 @@ export const aboutPageQuery = graphql`
   }
 `
 ```
-
