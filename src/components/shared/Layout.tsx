@@ -9,20 +9,19 @@ import '@reach/skip-nav/styles.css';
 // components
 import Footer from './Footer';
 import Nav from './Nav';
-import ScrollToTopButton from '../atoms/buttons/ScrollToTopButton';
-
-// styles
-import GlobalStyles from '../../styles/GlobalStyles';
-import Typography from '../../styles/Typography';
-import Theme from '../../styles/theme';
+import ScrollToTopButton from '@components/atoms/buttons/ScrollToTopButton';
 import LayoutContainer from './layout/LayoutContainer';
 
+// styles
+import GlobalStyles from '@styles/GlobalStyles';
+import Typography from '@styles/Typography';
+import Theme from '@styles/theme';
+
+// types
 interface LayoutProps {
   children: React.ReactNode;
 }
-// // import stripes from '../assets/images/stripes.svg';
 
-// eslint-disable-next-line react/prop-types
 function Layout({ children }: LayoutProps) {
   // function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);

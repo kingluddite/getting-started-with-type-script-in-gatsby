@@ -1,17 +1,11 @@
-/* eslint-disable react/jsx-props-no-spreading */
 // npm
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 // styles
 import { StyledLayoutContainer } from './styles';
 
-interface LayoutProps {
-  hasSectionGaps?: boolean;
-  children: ReactNode;
-  className?: string;
-  style?: any;
-  $gap?: any;
-}
+// types
+import { LayoutProps } from './types';
 
 function LayoutContainer({
   hasSectionGaps,

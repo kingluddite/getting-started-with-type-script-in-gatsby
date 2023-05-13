@@ -1,8 +1,11 @@
-/* eslint-disable react/jsx-props-no-spreading */
+// npm
 import React from 'react';
 
+// components
+import CardContent from '../CardContent/CardContent';
+
 // images
-import DefaultThumbnailImage from '../../../atoms/images/DefaultThumbnailImage';
+import DefaultThumbnailImage from '@components/atoms/images/DefaultThumbnailImage';
 
 // styles
 import {
@@ -10,21 +13,11 @@ import {
   StyledImageContainer,
   StyledCardLinkContainer,
 } from './styles';
-import CardContent from '../CardContent/CardContent';
 
 // types
-interface MediumCardProps {
-  cardType?: string;
-  actionType: string;
-  to?: string;
-  href?: string;
-  tagText?: string;
-  title: string;
-  description?: string;
-  image?: React.ReactNode;
-}
+import type { MediumCardProps } from './types';
 
-export default function MediumCard({
+function MediumCard({
   cardType,
   actionType,
   to = `/`,
@@ -113,3 +106,5 @@ export default function MediumCard({
       );
   }
 }
+
+export default MediumCard;

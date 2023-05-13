@@ -1,8 +1,9 @@
+// npm
 import React from 'react';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { PortableText } from '@portabletext/react';
 
 // components
+import Button from '@components/atoms/buttons/Button';
 
 // images
 import DefaultThumbnailImage from '@components/atoms/images/DefaultThumbnailImage';
@@ -15,24 +16,9 @@ import {
   StyledMetaContainer,
   StyledMetaText,
 } from './styles';
-import Button from '@components/atoms/buttons/Button';
 
-interface BoardMemberCardProps {
-  data: {
-    bioImg: {
-      asset: {
-        gatsbyImageData: IGatsbyImageData;
-      };
-      alt: string;
-    };
-    fullName: string;
-    expertise: string;
-    callToAction: string;
-    callToActionLink: string;
-    jobTitle: string;
-    bioTextBlock: any;
-  };
-}
+// types
+import type { BoardMemberCardProps } from './types';
 
 const BoardMemberCard: React.FC<BoardMemberCardProps> = ({
   data: {

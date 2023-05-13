@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-props-no-spreading */
 // npm
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 // styles
 import {
@@ -9,12 +8,8 @@ import {
   StyledButtonPrimary,
 } from './styles';
 
-interface SolidButtonProps {
-  action: any;
-  actionType: string;
-  children: ReactNode;
-  link?: string;
-}
+// types
+import type { SolidButtonProps } from './types';
 
 function SolidButton({
   actionType,
@@ -23,9 +18,11 @@ function SolidButton({
   children,
   ...props
 }: SolidButtonProps) {
+  // Determine the action type and render the appropriate button
   switch (actionType) {
     case `link`:
     case `internal`:
+      // Render a button as a Gatsby Link
       return (
         <StyledLinkPrimary to={link || `/`} {...props}>
           {children}
@@ -33,6 +30,7 @@ function SolidButton({
       );
     case `anchor`:
     case `external`:
+      // Render a button as an anchor (<a>) tag for external links
       return (
         <StyledAnchorPrimary
           href={link || `#`}
@@ -45,6 +43,7 @@ function SolidButton({
       );
     case `button`:
     default:
+      // Render a regular button element
       return (
         <StyledButtonPrimary onClick={action} {...props}>
           {children}

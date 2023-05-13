@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
-import HeroHeading from '../components/molecules/HeroHeading';
-import Logo from '../components/atoms/Logo';
+import HeroHeading from '@components/molecules/HeroHeading';
+import Logo from '@components/atoms/Logo';
 // styles
 
 type DataType = {

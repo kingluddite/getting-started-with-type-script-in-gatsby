@@ -13,8 +13,11 @@
     "paths": {
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
-      "@images/*": ["images/*"],
-      "@pages/*": ["pages/*"]
+      "@images/*": ["assets/images/*"],
+      "@svg/*": ["assets/svg/*"],
+      "@utils/*": ["utils/*"],
+      "@pages/*": ["pages/*"],
+      "@hooks/*": ["hooks/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]
   },

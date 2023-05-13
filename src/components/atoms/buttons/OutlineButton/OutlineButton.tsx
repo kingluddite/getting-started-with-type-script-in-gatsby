@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-props-no-spreading */
 // npm
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 // styles
 import {
@@ -9,12 +8,8 @@ import {
   StyledAnchorOutline,
 } from './styles';
 
-interface OutlineButtonProps {
-  action: any;
-  actionType: string;
-  children: ReactNode;
-  link?: string;
-}
+// types
+import type { OutlineButtonProps } from './types';
 
 function OutlineButton({
   action = () => false,
@@ -23,9 +18,11 @@ function OutlineButton({
   link,
   ...props
 }: OutlineButtonProps) {
+  // Switch statement to determine the button type based on the actionType
   switch (actionType) {
     case `link`:
     case `internal`:
+      // Render a link-based button for 'link' and 'internal' action types
       return (
         <StyledLinkOutline to={link || `/`} {...props}>
           {children}
@@ -33,6 +30,7 @@ function OutlineButton({
       );
     case `anchor`:
     case `external`:
+      // Render an anchor-based button for 'anchor' and 'external' action types
       return (
         <StyledAnchorOutline
           href={link || `#`}
@@ -45,6 +43,7 @@ function OutlineButton({
       );
     case `button`:
     default:
+      // Render a regular button for the 'button' action type (default)
       return (
         <StyledButtonOutline onClick={action} {...props}>
           {children}

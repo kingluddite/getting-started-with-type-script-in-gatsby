@@ -1,27 +1,13 @@
+// npm
 import React from 'react';
-import {
-  GatsbyImage,
-  getImage,
-  GatsbyImageProps,
-  IGatsbyImageData,
-} from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
+// styles
 import { StyledFigure } from './styles';
 
-interface ExtendedGatsbyImageProps extends GatsbyImageProps {
-  width?: number;
-  height?: number;
-}
-
-// describes the shape of the props that the ImageContainer component expects
-interface ImageContainerProps {
-  width?: number;
-  height?: number;
-  className?: string;
-  image?: any;
-  alt: string;
-  type?: 'static' | 'gatsby' | 'dynamic';
-  [propName: string]: any; // allow for any additional props to be passed in to the component
-}
+// types
+import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import type { ExtendedGatsbyImageProps, ImageContainerProps } from './types';
 
 const ImageContainer: React.FC<ImageContainerProps> = ({
   width,
@@ -60,4 +46,3 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
 };
 
 export default ImageContainer;
-export type { ImageContainerProps };

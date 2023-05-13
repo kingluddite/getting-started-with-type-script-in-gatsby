@@ -1,13 +1,16 @@
-// npm
 import styled, { css, keyframes } from 'styled-components';
 import { MenuList, MenuButton } from '@reach/menu-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+interface StyledMenuButtonProps {
+  $menuIsActive?: boolean;
+}
 
 export const activeStyle = css`
   background: var(--c-yellow-1);
 `;
 
-export const StyledMenuButton = styled(MenuButton)`
+export const StyledMenuButton = styled(MenuButton)<StyledMenuButtonProps>`
   display: flex;
   align-items: center;
   background: ${(props) =>
@@ -43,9 +46,9 @@ export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 
 export const StyledMenuListAnimation = keyframes`
   from {
-      opacity: 0;
-      transform: translateX(-12px);
-    }
+    opacity: 0;
+    transform: translateX(-12px);
+  }
   to {
     opacity: 1;
     transform: translateX(0);

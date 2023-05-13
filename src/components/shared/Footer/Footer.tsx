@@ -1,18 +1,19 @@
+// npm
 import React from 'react';
 import { Link } from 'gatsby';
 
-// Import data
-import navLinkData from '../../../utils/data/nav-links';
-import socialMediaData from '../../../utils/data/social-media';
+// static data
+import navLinkData from '@utils/data/nav-links';
+import socialMediaData from '@utils/data/social-media';
 
-// Import styles
+// styles
 import { StyledFooter } from './styles';
 
-// Import images
-import AEFLogoLight from '../../../assets/svg/aef-lightmode-logo.svg';
+// images
+import AEFLogoLight from '@svg/aef-lightmode-logo.svg';
 
-// Import components
-import SitemapSectionMapper from './SitemapSectionMapper';
+// utils
+import SitemapMapper from '@utils/SitemapMapper';
 
 function Footer() {
   return (
@@ -34,12 +35,12 @@ function Footer() {
       {/* Render sitemap */}
       <ul className="sitemap">
         {/* Map over nav link data to render sitemap sections */}
-        {SitemapSectionMapper(`About`, navLinkData.about)}
-        {SitemapSectionMapper(`Engage`, navLinkData.engage)}
-        {SitemapSectionMapper(`Programs`, navLinkData.programs)}
+        {SitemapMapper(`About`, navLinkData.about)}
+        {SitemapMapper(`Engage`, navLinkData.engage)}
+        {SitemapMapper(`Programs`, navLinkData.programs)}
 
         {/* Pass additional social media data to SitemapSectionMapper for "Connect" section */}
-        {SitemapSectionMapper(`Connect`, navLinkData.forms, socialMediaData)}
+        {SitemapMapper(`Connect`, navLinkData.forms, socialMediaData)}
       </ul>
     </StyledFooter>
   );

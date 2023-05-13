@@ -1,14 +1,11 @@
-import React, { ReactNode } from 'react';
-import { useSiteMetadata } from '../../../hooks/use-site-metadata';
+// npm
+import React from 'react';
 
-type SEOProps = {
-  children?: ReactNode;
-  description?: string;
-  image?: string;
-  location?: any;
-  pathname?: string;
-  title: string;
-};
+// hooks
+import { useSiteMetadata } from '@hooks/use-site-metadata';
+
+// types
+import type { SEOProps } from './types';
 
 function SEO({
   children,

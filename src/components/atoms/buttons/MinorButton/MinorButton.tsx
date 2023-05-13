@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-props-no-spreading */
 // npm
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { VisuallyHidden } from '@reach/visually-hidden';
 
@@ -13,16 +12,8 @@ import {
   StyledLinkMinor,
 } from './styles';
 
-interface MinorButtonProps {
-  action?: any;
-  actionType: string;
-  children: ReactNode;
-  disable?: boolean;
-  link?: string;
-  as?: any;
-  className?: string;
-  theme?: string;
-}
+// types
+import type { MinorButtonProps } from './types';
 
 export default function MinorButton({
   actionType,
@@ -32,9 +23,11 @@ export default function MinorButton({
   children,
   ...props
 }: MinorButtonProps) {
+  // Switch statement to determine the button type based on the actionType
   switch (actionType) {
     case `link`:
     case `internal`:
+      // Render a link-based button for 'link' and 'internal' action types
       return (
         <StyledLinkMinor as={disable && `span`} to={link || `/`} {...props}>
           <span>{children}</span>
@@ -46,6 +39,7 @@ export default function MinorButton({
       );
     case `anchor`:
     case `external`:
+      // Render an anchor-based button for 'anchor' and 'external' action types
       return (
         <StyledAnchorMinor
           as={disable && `span`}
@@ -64,6 +58,7 @@ export default function MinorButton({
       );
     case `button`:
     default:
+      // Render a regular button for the 'button' action type (default)
       return (
         <StyledButtonMinor onClick={action} {...props}>
           <span>{children}</span>

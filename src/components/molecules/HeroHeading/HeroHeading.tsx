@@ -1,16 +1,18 @@
-import React, { ReactNode } from 'react';
+// npm
+import React from 'react';
+
+// styles
 import {
   StyledHeroHeading,
   StyledHeroHeadingContent,
   StyledHeroHeadingContentHome,
 } from './styles';
-import wing from '../../../assets/images/wing.png';
 
-interface Props {
-  children?: ReactNode;
-  home?: boolean;
-  // Any other props that come into the component
-}
+// images
+import wing from '@images/wing.png';
+
+// types
+import type { HeroHeadingProps } from './types';
 
 /**
  * HeroHeading component renders the heading for the Hero section
@@ -19,7 +21,7 @@ interface Props {
  * @param {boolean} [props.home=false] - Flag indicating whether the component is used on the homepage
  * @returns {JSX.Element} - The JSX markup for the component
  */
-function HeroHeading({ children, home = false }: Props) {
+function HeroHeading({ children, home = false }: HeroHeadingProps) {
   return (
     <StyledHeroHeading>
       {/* Render the wing images on the homepage */}

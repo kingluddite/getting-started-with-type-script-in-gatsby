@@ -1,13 +1,16 @@
 import React, { FC } from 'react';
+
+// components
 import Tag from '../tags/Tag';
 
+// utilities
 import { dateFormatter } from '../../../utils/dateFormatter';
+
+// styles
 import { StyledMetaContainer } from './styles';
 
-type MetaContentProps = {
-  tag: string;
-  date: Date;
-};
+// types
+import { MetaContentProps } from './types';
 
 const MetaContent: FC<MetaContentProps> = ({ tag, date }) => {
   return (

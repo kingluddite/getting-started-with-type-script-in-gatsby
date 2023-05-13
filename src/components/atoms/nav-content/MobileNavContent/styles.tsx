@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components';
 
-export const activeSocialStyle = css`
+import type { FlattenSimpleInterpolation } from 'styled-components';
+
+interface StyledMenuSidebarProps {
+  $open: boolean;
+}
+
+export const activeSocialStyle: FlattenSimpleInterpolation = css`
   color: var(--c-yellow-1);
   transform: scale(1.2);
 `;
@@ -67,7 +73,8 @@ export const StyledToggleButton = styled.button`
     opacity: 0;
   }
 `;
-export const StyledMenuSidebar = styled.div`
+
+export const StyledMenuSidebar = styled.div<StyledMenuSidebarProps>`
   height: 100%;
   width: 100%;
   transform: ${(props) =>

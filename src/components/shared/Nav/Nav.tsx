@@ -3,20 +3,23 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // data
-import socialMediaData from '../../../utils/data/social-media';
-import navLinkData from '../../../utils/data/nav-links';
+import socialMediaData from '@utils/data/social-media';
+import navLinkData from '@utils/data/nav-links';
 
 // components
-import DesktopNavContent from '../../atoms/nav-content/DesktopNavContent';
-import MobileNavContent from '../../atoms/nav-content/MobileNavContent';
+import DesktopNavContent from '@components/atoms/nav-content/DesktopNavContent';
+import MobileNavContent from '@components/atoms/nav-content/MobileNavContent';
 
 // styles
 import { StyledNav, StyledAEFLogo } from './styles';
 
 // images
-import AEFLogoLight from '../../../assets/svg/aef-full-lightmode-logo-lg-top-tag.svg';
+import AEFLogoLight from '@svg/aef-full-lightmode-logo-lg-top-tag.svg';
 
-function Nav({ location, menuOpen, setMenuOpen }) {
+// types
+import { NavProps } from './types';
+
+function Nav({ location, menuOpen, setMenuOpen }: NavProps) {
   return (
     <StyledNav>
       <Link to="/">

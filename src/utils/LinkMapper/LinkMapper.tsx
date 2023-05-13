@@ -1,11 +1,17 @@
+// npm
 import React from 'react';
 import { Link } from 'gatsby';
+
 // styles
 import { StyledLinks } from './styles';
 
-function LinkMapper(data) {
-  data.map((item, index) => {
+// types
+import type { NavLinkItem } from './types';
+
+function LinkMapper(data: NavLinkItem[]) {
+  return data.map((item, index) => {
     if (item.type === `gatsby`) {
+      // Render a Link component for internal links
       return (
         <StyledLinks key={index + item.text}>
           <Link
@@ -17,6 +23,7 @@ function LinkMapper(data) {
         </StyledLinks>
       );
     }
+    // Render an anchor tag for external links
     return (
       <StyledLinks key={index + item.text}>
         <a href={item.url} target="_blank" rel="noopener noreferrer">

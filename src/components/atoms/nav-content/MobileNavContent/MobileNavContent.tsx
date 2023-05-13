@@ -1,8 +1,14 @@
+// npm
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VisuallyHidden } from '@reach/visually-hidden';
-import LinkMapper from '../../../../utils/LinkMapper';
-import AsifaLogo from '../../../../assets/images/asifa.png';
+
+// utils
+import LinkMapper from '@utils/LinkMapper';
+
+// images
+import AsifaLogo from '@images/asifa.png';
+
 // styles
 import {
   StyledMenuButtonContainer,
@@ -16,55 +22,82 @@ import {
   StyledSocialLink,
 } from './styles';
 
-function MobileNavContent({
+// types
+import type { MobileNavContentProps } from './types';
+
+const MobileNavContent: React.FC<MobileNavContentProps> = ({
   navLinkData,
   socialMediaData,
   menuOpen,
   setMenuOpen,
-}) {
+}) => {
   return (
     <>
+      {/* Container for the menu button */}
       <StyledMenuButtonContainer className="mobileNav">
+        {/* Toggle button to open/close the menu */}
         <StyledToggleButton
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
         >
+          {/* Visually hidden text for screen readers */}
           <VisuallyHidden>
             {menuOpen ? `Open nav menu` : `Close nav menu`}
           </VisuallyHidden>
+          {/* Visual indicator of menu open/close state */}
           <div className={menuOpen ? `open` : `close`} />
         </StyledToggleButton>
       </StyledMenuButtonContainer>
+
+      {/* Sidebar for the menu */}
       <StyledMenuSidebar $open={menuOpen}>
         <StyledMenuContainer>
+          {/* Heading for "About" section */}
           <StyledLinkHeading>About</StyledLinkHeading>
+          {/* Container for links in "About" section */}
           <StyledLinkContainer>
+            {/* Render links using LinkMapper utility function */}
             {LinkMapper(navLinkData.about)}
           </StyledLinkContainer>
 
+          {/* Heading for "Engage" section */}
           <StyledLinkHeading>Engage</StyledLinkHeading>
+          {/* Container for links in "Engage" section */}
           <StyledLinkContainer>
+            {/* Render links using LinkMapper utility function */}
             {LinkMapper(navLinkData.engage)}
           </StyledLinkContainer>
 
+          {/* Heading for "Programs" section */}
           <StyledLinkHeading>Programs</StyledLinkHeading>
+          {/* Container for links in "Programs" section */}
           <StyledLinkContainer>
+            {/* Render links using LinkMapper utility function */}
             {LinkMapper(navLinkData.programs)}
           </StyledLinkContainer>
+
+          {/* Heading for "Connect" section */}
           <StyledLinkHeading>Connect</StyledLinkHeading>
+          {/* Container for links in "Connect" section */}
           <StyledLinkContainer>
+            {/* Render links using LinkMapper utility function */}
             {LinkMapper(navLinkData.forms)}
           </StyledLinkContainer>
+
+          {/* Container for social media links */}
           <StyledSocialContainer>
             <div>
+              {/* Link to ASIFA-Hollywood website */}
               <a
                 href="https://www.asifa-hollywood.org/"
                 target="_blank"
                 rel="norefer noopener noreferrer"
               >
+                {/* ASIFA-Hollywood logo */}
                 <StyledAsifaLogo src={AsifaLogo} alt="ASIFA-Hollywood Logo" />
               </a>
             </div>
+            {/* ASIFA-Hollywood logo */}
             {socialMediaData.map((i, index) => (
               <StyledSocialLink
                 key={index + i.icon}
@@ -72,6 +105,7 @@ function MobileNavContent({
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                {/* Social media icon */}
                 <FontAwesomeIcon icon={i.icon} />
               </StyledSocialLink>
             ))}
@@ -80,6 +114,6 @@ function MobileNavContent({
       </StyledMenuSidebar>
     </>
   );
-}
+};
 
 export default MobileNavContent;

@@ -1,4 +1,17 @@
-const navLinkData = {
+export interface NavLink {
+  type: 'gatsby' | 'external';
+  url: string;
+  text: string;
+}
+
+export interface NavLinkData {
+  about: NavLink[];
+  engage: NavLink[];
+  programs: NavLink[];
+  forms: NavLink[];
+}
+
+const navLinkData: NavLinkData = {
   programs: [
     {
       type: `gatsby`,

@@ -1,19 +1,18 @@
+// npm
 import React from 'react';
-import defaultThumbnail from '../../../../assets/images/default-aef-thumbnail-logo.jpg';
 
-interface Props {
-  width: number;
-  height: number;
-  borderRadius?: string;
-  className?: string;
-}
+// image
+import defaultThumbnail from '@images/default-aef-thumbnail-logo.jpg';
+
+// types
+import type { DefaultThumbnailImageProps } from './types';
 
 function DefaultThumbnailImage({
   width,
   height,
   borderRadius,
   className,
-}: Props) {
+}: DefaultThumbnailImageProps) {
   return (
     <img
       src={defaultThumbnail}

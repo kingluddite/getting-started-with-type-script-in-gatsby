@@ -1,24 +1,15 @@
+// npm
 import React from 'react';
 import { compareAsc } from 'date-fns';
 
-// Importing PostCard component
-import PostCard from '../../cards/PostCard';
+// components
+import PostCard from '@components/molecules/cards/PostCard';
 
-// Importing StyledPostContainer component
+// styles
 import { StyledPostContainer } from './styles';
 
-// Defining the type of the eventBlogs props
-type EventPostListProps = {
-  eventBlogs: {
-    nodes: Array<{
-      id: string;
-      eventImg: { asset: { gatsbyImageData: any }; alt?: string };
-      eventDate: string;
-      slug: { current: string };
-      eventTitle: string;
-    }>;
-  };
-};
+// types
+import { EventPostListProps } from './types';
 
 // Defining the EventPostList component
 const EventPostList: React.FC<EventPostListProps> = ({ eventBlogs }) => {

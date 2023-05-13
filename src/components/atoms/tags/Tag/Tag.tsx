@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 // npm
 import React from 'react';
 
@@ -7,13 +6,9 @@ import MajorTag from '../MajorTag';
 import MinorTag from '../MinorTag';
 
 // types
-interface TagProps {
-  text: string;
-  type: 'minor' | 'primary';
-  color?: string;
-}
+import type { TagProps } from './types';
 
-export default function Tag({ type, text, color }: TagProps) {
+function Tag({ type, text, color }: TagProps) {
   switch (type) {
     case `minor`:
       return <MinorTag text={text} />;
@@ -22,3 +17,5 @@ export default function Tag({ type, text, color }: TagProps) {
       return <MajorTag text={text} color={color} />;
   }
 }
+
+export default Tag;

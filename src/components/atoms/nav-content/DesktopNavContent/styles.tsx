@@ -1,5 +1,9 @@
+// npm
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
+
+// types
+import { AnimationControlProps } from './types';
 
 export const activeStyle = css`
   background: var(--c-yellow-1);
@@ -10,7 +14,7 @@ export const activeSocialStyle = css`
   transform: scale(1.2);
 `;
 
-export const StyledContentContainer = styled.div`
+export const StyledContentContainer = styled.ul`
   position: relative;
   display: flex;
   align-items: center;
@@ -18,7 +22,7 @@ export const StyledContentContainer = styled.div`
   margin-left: var(--size-1);
 `;
 
-export const StyledSocialContainer = styled.div`
+export const StyledSocialContainer = styled.div<AnimationControlProps>`
   position: absolute;
   display: flex;
   padding-right: var(--size-1);
@@ -41,7 +45,7 @@ export const StyledSocialLink = styled.a`
   }
 `;
 
-export const StyledLinkContainer = styled.ul`
+export const StyledLinkContainer = styled.ul<AnimationControlProps>`
   position: relative;
   display: flex;
   justify-content: space-between;

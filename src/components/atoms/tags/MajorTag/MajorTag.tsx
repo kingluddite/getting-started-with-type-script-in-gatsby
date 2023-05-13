@@ -1,13 +1,14 @@
+// npm
 import React from 'react';
+
+// styles
 import { StyledTagMajor } from './styles';
 
-type ColorType = 'grey' | 'yellow';
+// types
+import { MajorTagProps } from './types';
 
-interface MajorTagProps {
-  text: string;
-  color: ColorType;
+function MajorTag({ text, color }: MajorTagProps) {
+  return <StyledTagMajor $color={color} text={text} />;
 }
 
-export default function MajorTag({ text, color }: MajorTagProps) {
-  return <StyledTagMajor $color={color}>{text}</StyledTagMajor>;
-}
+export default MajorTag;

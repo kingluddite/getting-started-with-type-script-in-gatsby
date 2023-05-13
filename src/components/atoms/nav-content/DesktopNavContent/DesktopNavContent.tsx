@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TopNavDropdown from '../TopNavDropdown';
 
 // images
-import AsifaLogo from '../../../../assets/images/asifa.png';
+import AsifaLogo from '@images/asifa.png';
 
 // styles
 import {
@@ -21,12 +21,22 @@ import {
   StyledToggleContainer,
 } from './styles';
 
-function DesktopNavContent({ location, navLinkData, socialMediaData }) {
+// types
+import { DesktopNavContentProps } from './types';
+
+function DesktopNavContent({
+  location,
+  navLinkData,
+  socialMediaData,
+}: DesktopNavContentProps) {
+  // State to toggle the social media links container
   const [socialMediaToggle, setSocialMediaToggle] = useState(false);
 
   return (
     <StyledContentContainer className="desktopNav">
+      {/* Container for the navigation links */}
       <StyledLinkContainer $animate={socialMediaToggle}>
+        {/* About dropdown */}
         <li>
           <TopNavDropdown
             buttonText="About"
@@ -34,6 +44,7 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
             location={location}
           />
         </li>
+        {/* Engage dropdown */}
         <li>
           <TopNavDropdown
             buttonText="Engage"
@@ -41,6 +52,7 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
             location={location}
           />
         </li>
+        {/* Programs dropdown */}
         <li>
           <TopNavDropdown
             buttonText="Programs"
@@ -48,6 +60,7 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
             location={location}
           />
         </li>
+        {/* Join Us link */}
         <li>
           <StyleLink
             to="/join"
@@ -58,6 +71,7 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
             Join Us
           </StyleLink>
         </li>
+        {/* Contact link */}
         <li>
           <StyleLink
             to="/contact"
@@ -68,6 +82,7 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
             Contact
           </StyleLink>
         </li>
+        {/* ASIFA-Hollywood logo */}
         <li>
           <a
             href="https://www.asifa-hollywood.org/"
@@ -78,7 +93,10 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
           </a>
         </li>
       </StyledLinkContainer>
+
+      {/* Container for social media links */}
       <StyledSocialContainer $animate={!socialMediaToggle}>
+        {/* Render social media links */}
         {socialMediaData.map((i, index) => (
           <StyledSocialLink
             key={index + i.icon}
@@ -90,11 +108,15 @@ function DesktopNavContent({ location, navLinkData, socialMediaData }) {
           </StyledSocialLink>
         ))}
       </StyledSocialContainer>
+
+      {/* Container for the toggle button */}
       <StyledToggleContainer>
+        {/* Toggle button for social media links */}
         <StyledToggleButton
           type="button"
           onClick={() => setSocialMediaToggle(!socialMediaToggle)}
         >
+          {/* Render appropriate icon based on toggle state */}
           {socialMediaToggle ? (
             <FontAwesomeIcon icon={faTimes} />
           ) : (

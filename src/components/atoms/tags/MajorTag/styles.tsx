@@ -1,10 +1,8 @@
+// npm
 import styled, { css } from 'styled-components';
 
-type ColorType = 'grey' | 'yellow';
-
-interface MajorTagProps {
-  $color: ColorType;
-}
+// types
+import { MajorTagProps } from './types';
 
 export const MajorStyles = css<MajorTagProps>`
   background: ${(props) =>

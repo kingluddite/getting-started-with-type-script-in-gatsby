@@ -1,30 +1,14 @@
+// npm
 import React from 'react';
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
-import PostCard from '../../cards/PostCard';
 
+// components
+import PostCard from '@components/molecules/cards/PostCard';
+
+// styles
 import { StyledPostContainer } from './styles';
 
-interface LatestNewsListProps {
-  latestNewsBlog: {
-    nodes: Array<{
-      id: string;
-      newsBlogImg: {
-        alt: string;
-        asset: {
-          gatsbyImageData: IGatsbyImageData;
-        };
-      };
-      newsTag: string;
-      _type: string;
-      publishDate: string;
-      slug: {
-        current: string;
-      };
-      newsBlogTitle: string;
-      newsContentExcerpt?: string;
-    }>;
-  };
-}
+// types
+import type { LatestNewsListProps } from './types';
 
 const LatestNewsList: React.FC<LatestNewsListProps> = ({ latestNewsBlog }) => {
   // Creating a local variable for easier access to the nodes array

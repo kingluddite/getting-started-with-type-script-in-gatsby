@@ -1,15 +1,14 @@
+// npm
 import React from 'react';
-import truncateText from '../../../utils/truncateText';
 
+// utils
+import truncateText from '@utils/truncateText';
+
+// styles
 import { StyledTextContainer, StyledTextHeading } from './styles';
 
-type TextContentProps = {
-  type: string;
-  heading: string;
-  excerpt?: string;
-  charLimitHeading: number;
-  charLimitExcerpt: number;
-};
+// types
+import { TextContentProps } from './types';
 
 function TextContent({
   type,

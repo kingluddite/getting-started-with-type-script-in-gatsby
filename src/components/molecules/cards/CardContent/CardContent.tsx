@@ -2,24 +2,17 @@
 import React from 'react';
 
 // components
-import Button from '../../../atoms/buttons/Button';
-import Tag from '../../../atoms/tags/Tag';
+import Button from '@components/atoms/buttons/Button';
+import Tag from '@components/atoms/tags/Tag';
 
 // utility
-import truncateText from '../../../../utils/truncateText';
+import truncateText from '@utils/truncateText';
 
 // styles
 import { StyledContentContainer, StyledMetaContainer } from './styles';
 
-interface CardContentProps {
-  cardType?: string;
-  actionType: string;
-  tagText?: string;
-  title: string;
-  description?: string;
-  charLimitTitle: number;
-  charLimitDesc: number;
-}
+// types
+import { CardContentProps } from './types';
 
 const CardContent: React.FC<CardContentProps> = ({
   cardType,

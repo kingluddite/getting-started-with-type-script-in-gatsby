@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledSitemapSection = styled.li`
+export const StyledSitemapMapper = styled.li`
   display: flex;
   flex-flow: column;
   gap: var(--size-1);

@@ -53,9 +53,9 @@ export const aboutPageQuery = graphql`
 import React from 'react';
 import { PageProps } from 'gatsby';
 import { aboutPageQuery } from '../queries/aboutPageQuery';
-import HeroHeading from '../components/molecules/HeroHeading';
-import Logo from '../components/atoms/Logo';
-import SEO from '../components/shared/SEO';
+import HeroHeading from '@components/molecules/HeroHeading';
+import Logo from '@components/atoms/Logo';
+import SEO from '@components/shared/SEO';
 // styles
 import { StyledSection, StyledSectionTitle } from './styles/AboutStyles';
 

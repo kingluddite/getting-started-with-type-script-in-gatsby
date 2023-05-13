@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 // npm
 import React from 'react';
 
@@ -6,9 +5,7 @@ import React from 'react';
 import { StyledTagMinor } from './styles';
 
 // types
-interface MinorTagProps {
-  text: string;
-}
+import { MinorTagProps } from './types';
 
 function MinorTag({ text }: MinorTagProps) {
   return <StyledTagMinor>{text}</StyledTagMinor>;

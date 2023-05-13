@@ -1,23 +1,16 @@
-import React, { ReactNode } from 'react';
+// npm
+import React from 'react';
 
 // components
 import ImageContainer from '@components/atoms/images/ImageContainer';
-import type { ImageContainerProps } from '@components/atoms/images/ImageContainer/ImageContainer';
+
 import Button from '@components/atoms/buttons/MinorButton';
 
 // styles
 import { StyledContent, StyledContentBlock } from './styles';
 
-interface ContentBlockProps {
-  heading?: string;
-  imageProps?: Partial<ImageContainerProps>; // make imageProps optional
-  showImage?: boolean;
-  callToActionLink?: string;
-  callToActionTitle?: string;
-  callToActionType?: 'link' | 'button';
-  showCallToAction?: boolean;
-  children: ReactNode;
-}
+// types
+import { ContentBlockProps } from './types';
 
 const ContentBlock = ({
   heading,
