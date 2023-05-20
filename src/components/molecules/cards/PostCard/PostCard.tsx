@@ -5,8 +5,11 @@ import { getImage } from 'gatsby-plugin-image';
 // components
 import MetaContent from '../../../atoms/MetaContent/MetaContent';
 import TextContent from '../../../atoms/TextContent/TextContent';
+
+// images
 import DefaultThumbnailImage from '../../../atoms/images/DefaultThumbnailImage';
 
+// styles
 import {
   StyledPostCardContainer,
   StyledPostCardImg,
@@ -14,16 +17,8 @@ import {
 } from './styles';
 import { StyledContentContainer } from '../CardContent/styles';
 
-interface Props {
-  type: string;
-  to: string;
-  image: any;
-  altText: string;
-  date: string;
-  tagText: string;
-  title: string;
-  description?: string;
-}
+// types
+import { PostCardProps } from './types';
 
 function PostCard({
   type,
@@ -34,7 +29,7 @@ function PostCard({
   tagText,
   title,
   description,
-}: Props) {
+}: PostCardProps) {
   // Create a new Date object from the date string
   const dateObj = new Date(date);
 
@@ -61,7 +56,7 @@ function PostCard({
               }}
               // Use objectFit="contain" to fit the image inside the container
               objectFit="contain"
-              alt={altText}
+              alt={altText || ``}
             />
           ) : (
             <DefaultThumbnailImage

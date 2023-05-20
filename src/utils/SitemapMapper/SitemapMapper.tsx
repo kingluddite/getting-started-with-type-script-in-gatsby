@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconName } from '@fortawesome/fontawesome-svg-core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+// import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 // styles
 import { StyledSitemapMapper } from './styles';
@@ -41,7 +42,8 @@ const SitemapMapper = (
         <ul className="social-links">
           {social.map((e) => (
             <a key={e.url} href={e.url} target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={[`fas`, e.icon as IconName]} />
+              {/* <FontAwesomeIcon icon={[`fas`, e.icon as IconName]} /> */}
+              <FontAwesomeIcon icon={e.icon as IconProp} />
             </a>
           ))}
         </ul>

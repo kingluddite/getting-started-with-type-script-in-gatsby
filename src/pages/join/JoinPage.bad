@@ -1,0 +1,66 @@
+// add "render" in next line import
+import { render, screen, fireEvent } from '@testing-library/react';
+import { it, describe, expect, beforeEach } from 'vitest';
+import JoinPage from './index';
+import { mockData } from './mockData';
+
+describe(`JoinPage`, () => {
+  beforeEach(() => {
+    // Mock the fetch function
+    globalThis.fetch = () => Promise.resolve(new Response());
+  });
+
+  // it(`renders the form`, () => {
+  //   render(<JoinPage data={mockData} />);
+
+  //   // Assert that the form elements are rendered
+  //   expect(screen.getByLabelText(`First Name*`)).toBeInTheDocument();
+  //   expect(screen.getByLabelText(`Last Name*`)).toBeInTheDocument();
+  //   expect(screen.getByLabelText(`Email*`)).toBeInTheDocument();
+  //   expect(screen.getByLabelText(`Title*`)).toBeInTheDocument();
+  //   expect(screen.getByLabelText(`School*`)).toBeInTheDocument();
+  //   expect(screen.getByLabelText(`Comments`)).toBeInTheDocument();
+  //   expect(screen.getByRole(`button`, { name: `Submit` })).toBeInTheDocument();
+  // });
+
+  // it(`submits the form`, () => {
+  //   render(<JoinPage data={mockData} />);
+
+  //   // Fill in the form fields
+  //   fireEvent.change(screen.getByLabelText(`First Name*`), {
+  //     target: { value: `John` },
+  //   });
+  //   fireEvent.change(screen.getByLabelText(`Last Name*`), {
+  //     target: { value: `Doe` },
+  //   });
+  //   fireEvent.change(screen.getByLabelText(`Email*`), {
+  //     target: { value: `john@example.com` },
+  //   });
+  //   fireEvent.change(screen.getByLabelText(`Title*`), {
+  //     target: { value: `Professor` },
+  //   });
+  //   fireEvent.change(screen.getByLabelText(`School*`), {
+  //     target: { value: `University` },
+  //   });
+  //   fireEvent.change(screen.getByLabelText(`Comments`), {
+  //     target: { value: `Test comment` },
+  //   });
+
+  //   // Submit the form
+  //   fireEvent.click(screen.getByRole(`button`, { name: `Submit` }));
+
+  //   // Assert that the form data is sent correctly
+  //   expect(globalThis.fetch).toHaveBeenCalledWith(`/`, {
+  //     method: `POST`,
+  //     headers: {
+  //       'Content-Type': `application/x-www-form-urlencoded`,
+  //     },
+  //     body: expect.anything(), // Check the form data content in more detail if necessary
+  //   });
+
+  //   // Assert that the user is navigated to the correct page after form submission
+  //   expect(
+  //     screen.getByRole(`heading`, { name: `Thank You` }),
+  //   ).toBeInTheDocument();
+  // });
+});

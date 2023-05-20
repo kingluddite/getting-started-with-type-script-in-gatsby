@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export interface MinorButtonProps {
   action?: any;
-  actionType: string;
+  actionType?: string;
   children: ReactNode;
   disable?: boolean;
   link?: string;

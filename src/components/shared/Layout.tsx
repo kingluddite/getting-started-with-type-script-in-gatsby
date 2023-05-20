@@ -13,9 +13,9 @@ import ScrollToTopButton from '@components/atoms/buttons/ScrollToTopButton';
 import LayoutContainer from './layout/LayoutContainer';
 
 // styles
-import GlobalStyles from '@styles/GlobalStyles';
-import Typography from '@styles/Typography';
-import Theme from '@styles/theme';
+import GlobalStyles from '@styles/globals/GlobalStyles';
+import Typography from '@styles/globals/Typography';
+import Theme from '@styles/globals/theme';
 
 // types
 interface LayoutProps {

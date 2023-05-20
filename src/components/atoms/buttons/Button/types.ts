@@ -6,5 +6,7 @@ export interface ButtonProps {
   action?: any;
   link?: string;
   theme?: string;
-  actionType: string;
+  actionType?: string;
+  type?: string;
+  to?: string;
 }

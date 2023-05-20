@@ -7,7 +7,7 @@ import HeroHeading from '@components/molecules/HeroHeading';
 import Logo from '@components/atoms/Logo';
 import SEO from '@components/shared/SEO';
 import LayoutContainer from '@components/shared/layout/LayoutContainer';
-import Gallery from '@components/atoms/images/Gallery';
+// import Gallery from '@components/atoms/images/Gallery';
 import ContentBlock from '@components/molecules/ContentBlock';
 import BoardMemberCard from '@components/molecules/cards/BoardMemberCard';
 
@@ -31,8 +31,8 @@ const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
     quoteManyBlock,
     boardMemberManyHeading,
     boardMemberBlock,
-    galleryManyBlock,
-    hasGallery,
+    // galleryManyBlock,
+    // hasGallery,
     pageImageBlock,
   } = data.aboutPage;
 
@@ -75,7 +75,7 @@ const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
           ))}
         </StyledSection>
         <StyledSection>
-          {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
+          {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
         </StyledSection>
       </LayoutContainer>
     </>

@@ -9,7 +9,7 @@ export interface ContentBlockProps {
   showImage?: boolean;
   callToActionLink?: string;
   callToActionTitle?: string;
-  callToActionType?: 'link' | 'button';
+  callToActionType?: 'link' | 'button' | 'external' | 'internal';
   showCallToAction?: boolean;
   children: ReactNode;
 }

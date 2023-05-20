@@ -15,7 +15,7 @@ import {
 // types
 import type { MinorButtonProps } from './types';
 
-export default function MinorButton({
+function MinorButton({
   actionType,
   link,
   action = () => false,
@@ -66,3 +66,5 @@ export default function MinorButton({
       );
   }
 }
+
+export default MinorButton;

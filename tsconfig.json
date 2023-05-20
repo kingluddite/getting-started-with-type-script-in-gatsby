@@ -15,8 +15,11 @@
       "@styles/*": ["styles/*"],
       "@images/*": ["assets/images/*"],
       "@svg/*": ["assets/svg/*"],
+      "@shared/*": ["components/shared/*"],
       "@utils/*": ["utils/*"],
       "@pages/*": ["pages/*"],
+      "@forms/*": ["components/atoms/forms/*"],
+      "@cards/*": ["components/molecules/cards/*"],
       "@hooks/*": ["hooks/*"]
     },
     "types": ["node", "@testing-library/jest-dom"]

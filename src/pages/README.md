@@ -76,8 +76,8 @@ const AboutPage = ({ data }: PageProps<DataType>) => {
     quoteManyBlock,
     boardMemberManyHeading,
     boardMemberBlock,
-    galleryManyBlock,
-    hasGallery,
+    // galleryManyBlock,
+    // hasGallery,
     pageImageBlock,
   } = data.aboutPage;
 
