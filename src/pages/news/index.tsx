@@ -1,6 +1,6 @@
 // npm
 import React, { useEffect, useState, useCallback } from 'react';
-import { PageProps, graphql } from 'gatsby';
+import { HeadProps, PageProps, graphql } from 'gatsby';
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,6 +14,9 @@ import Logo from '@components/atoms/Logo';
 
 // images
 import ImageContainer from '@components/atoms/images/ImageContainer';
+// import Gallery from '../components/atoms/Gallery';
+
+// styles
 import {
   StyledForm,
   StyledSearchIcon,
@@ -21,15 +24,16 @@ import {
   StyledTwoColumnSection,
 } from './styles';
 import { StyledInput } from '@components/atoms/forms/FormInput/styles';
-import { NewsPageContext, NewsPageData } from './types';
-// import Gallery from '../components/atoms/Gallery';
 
-const NewsPage: React.FC<PageProps<NewsPageData, NewsPageContext>> = ({
+// types
+import { NewsPageContext, NewsPageQuery } from './types';
+
+const NewsPage: React.FC<PageProps<NewsPageQuery, NewsPageContext>> = ({
   data,
   pageContext,
 }) => {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     // galleryManyBlock,
@@ -70,7 +74,6 @@ const NewsPage: React.FC<PageProps<NewsPageData, NewsPageContext>> = ({
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -142,6 +145,12 @@ const NewsPage: React.FC<PageProps<NewsPageData, NewsPageContext>> = ({
 };
 
 export default NewsPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<NewsPageQuery>) {
+  const { name } = data.newsPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query NewsPageQuery($skip: Int = 0, $pageSize: Int = 10) {

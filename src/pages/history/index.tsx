@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
@@ -8,20 +8,20 @@ import LayoutContainer from '@shared/layout/LayoutContainer';
 import SEO from '@shared/SEO';
 import HeroHeading from '@components/molecules/HeroHeading';
 import ContentBlock from '@components/molecules/ContentBlock';
-// import YearBlock from '@components/atoms/YearBlock';
+import YearBlock from '@blocks/YearBlock';
 // import Gallery from '@components/atoms/Gallery';
 import Logo from '@components/atoms/Logo';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // styles
-import { StyledSection } from './styles';
+import { StyledSection, StyledTimeline } from './styles';
 
 // types
-import { HistoryPageProps } from './types';
+import { HistoryPageQuery } from './types';
 
-const HistoryPage: React.FC<HistoryPageProps> = ({ data }) => {
+function HistoryPage({ data }: { data: HistoryPageQuery }) {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     // galleryManyBlock,
@@ -30,12 +30,11 @@ const HistoryPage: React.FC<HistoryPageProps> = ({ data }) => {
     // timelineImg,
     quoteManyBlock,
     timelineTextBlock,
-    // timelineManyBlock,
+    timelineManyBlock,
     pageImageBlock,
   } = data.historyPage;
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -69,25 +68,32 @@ const HistoryPage: React.FC<HistoryPageProps> = ({ data }) => {
             <PortableText value={timelineTextBlock} />
           </ContentBlock>
           <ContentBlock>
-            {/* <StyledTimeline>
-              {timelineManyBlock
-                .sort((a, b) => a.yearOfEvent - b.yearOfEvent)
-                .map((t) => (
-                  <YearBlock
-                    key={t.id}
-                    year={t.yearOfEvent}
-                    text={t.eventDescription}
-                  />
-                ))}
-            </StyledTimeline> */}
+            <StyledTimeline>
+              {timelineManyBlock &&
+                timelineManyBlock
+                  .sort((a, b) => a.yearOfEvent - b.yearOfEvent)
+                  .map((t) => (
+                    <YearBlock
+                      key={t.id}
+                      year={t.yearOfEvent}
+                      text={t.eventDescription}
+                    />
+                  ))}
+            </StyledTimeline>
           </ContentBlock>
         </StyledSection>
       </LayoutContainer>
     </>
   );
-};
+}
 
 export default HistoryPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<HistoryPageQuery>) {
+  const { name } = data.historyPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query HistoryPageQuery {

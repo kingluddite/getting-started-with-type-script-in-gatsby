@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { navigate, graphql } from 'gatsby';
+import { navigate, graphql, HeadProps } from 'gatsby';
 import { useForm } from 'react-hook-form';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 
@@ -23,11 +23,11 @@ import {
   StyledInstructions,
   StyledSection,
 } from './styles';
+import { JoinPageQuery } from './types';
 
 // types
-import { JoinPageProps } from './types';
 
-const JoinPage: React.FC<JoinPageProps> = ({ data }) => {
+function JoinPage({ data }: { data: JoinPageQuery }) {
   const {
     register,
     handleSubmit,
@@ -35,7 +35,7 @@ const JoinPage: React.FC<JoinPageProps> = ({ data }) => {
   } = useForm();
 
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     instructions,
@@ -69,7 +69,6 @@ const JoinPage: React.FC<JoinPageProps> = ({ data }) => {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -184,9 +183,14 @@ const JoinPage: React.FC<JoinPageProps> = ({ data }) => {
       </LayoutContainer>
     </>
   );
-};
+}
 
 export default JoinPage;
+
+export function Head({ data }: HeadProps<JoinPageQuery>) {
+  const { name } = data.joinPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query JoinPageQuery {

@@ -1,7 +1,7 @@
 // npm
 import React from 'react';
 // import { StaticImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
@@ -17,11 +17,11 @@ import LayoutContainer from '@shared/layout/LayoutContainer';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // types
-import { ScholarshipPageData } from './types';
+import { ScholarshipsPageQuery } from './types';
 
-function StudentScholarshipPage({ data }: { data: ScholarshipPageData }) {
+function StudentScholarshipPage({ data }: { data: ScholarshipsPageQuery }) {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     headingOneButtonText,
@@ -42,7 +42,6 @@ function StudentScholarshipPage({ data }: { data: ScholarshipPageData }) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -307,6 +306,12 @@ function StudentScholarshipPage({ data }: { data: ScholarshipPageData }) {
 }
 
 export default StudentScholarshipPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<ScholarshipsPageQuery>) {
+  const { name } = data.scholarshipPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query ScholarshipPageQuery {

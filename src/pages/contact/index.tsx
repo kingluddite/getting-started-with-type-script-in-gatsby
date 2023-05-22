@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { navigate, graphql } from 'gatsby';
+import { navigate, graphql, HeadProps } from 'gatsby';
 import { useForm } from 'react-hook-form';
 import type { FieldValues, SubmitHandler } from 'react-hook-form';
 
@@ -37,7 +37,7 @@ function ContactPage({ data }: { data: ContactPageQuery }) {
   } = useForm();
 
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     instructions,
@@ -71,7 +71,6 @@ function ContactPage({ data }: { data: ContactPageQuery }) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -156,6 +155,12 @@ function ContactPage({ data }: { data: ContactPageQuery }) {
 }
 
 export default ContactPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<ContactPageQuery>) {
+  const { name } = data.contactPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query ContactPageQuery {

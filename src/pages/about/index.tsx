@@ -22,7 +22,7 @@ import { AboutPageQueryData, QuoteBlock, BoardMemberBlock } from './types';
 
 const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     // headingTwo,
@@ -38,7 +38,7 @@ const AboutPage: React.FC<PageProps<AboutPageQueryData>> = ({ data }) => {
 
   return (
     <>
-      <SEO title={name} />
+      {/* <SEO title={name} /> */}
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>

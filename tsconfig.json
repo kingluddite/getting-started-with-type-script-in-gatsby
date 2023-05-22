@@ -19,6 +19,7 @@
       "@utils/*": ["utils/*"],
       "@pages/*": ["pages/*"],
       "@forms/*": ["components/atoms/forms/*"],
+      "@blocks/*": ["components/atoms/blocks/*"],
       "@cards/*": ["components/molecules/cards/*"],
       "@hooks/*": ["hooks/*"]
     },

@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
@@ -18,11 +18,11 @@ import ImageContainer from '@components/atoms/images/ImageContainer';
 import { StyledFAQ } from './styles';
 
 // types
-import { ForumPageProps } from './types';
+import { ForumPageQuery } from './types';
 
-function ForumPage({ data }: ForumPageProps) {
+function ForumPage({ data }: { data: ForumPageQuery }) {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     // content,
@@ -41,7 +41,6 @@ function ForumPage({ data }: ForumPageProps) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -181,6 +180,12 @@ function ForumPage({ data }: ForumPageProps) {
 }
 
 export default ForumPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<ForumPageQuery>) {
+  const { name } = data.forumPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query ForumPageQuery {

@@ -1,4 +1,4 @@
-export interface ThankYouPageData {
+export interface ThankYouPageQuery {
   thankYouPage: {
     name: string;
     headingOne: string;

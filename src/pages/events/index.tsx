@@ -1,6 +1,6 @@
 // npm
 import React, { useCallback, useEffect, useState } from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { compareAsc, format } from 'date-fns';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,11 +29,10 @@ import {
 } from './styles';
 import { StyledInput } from '@components/atoms/forms/FormInput/styles';
 
-import { EventData, EventsPageProps } from './types';
+import { EventData, EventsPageQuery } from './types';
 
-function EventsPage({ data }: EventsPageProps) {
+function EventsPage({ data }: { data: EventsPageQuery }) {
   const {
-    name,
     headingOne,
     subheading,
     // galleryManyBlock,
@@ -90,7 +89,6 @@ function EventsPage({ data }: EventsPageProps) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -197,6 +195,11 @@ function EventsPage({ data }: EventsPageProps) {
 }
 
 export default EventsPage;
+
+export function Head({ data }: HeadProps<EventsPageQuery>) {
+  const { name } = data.eventsPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query EventsPageQuery {

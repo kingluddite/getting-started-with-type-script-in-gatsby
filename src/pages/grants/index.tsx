@@ -1,7 +1,7 @@
 // npm
 import React from 'react';
 // import { StaticImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
@@ -16,11 +16,10 @@ import LayoutContainer from '@shared/layout/LayoutContainer';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // types
-import { GrantPageData } from './types';
+import { GrantPageQuery } from './types';
 
-function GrantsPage({ data }: { data: GrantPageData }) {
+function GrantsPage({ data }: { data: GrantPageQuery }) {
   const {
-    name,
     headingOne,
     subheading,
     // headingTwo,
@@ -35,7 +34,6 @@ function GrantsPage({ data }: { data: GrantPageData }) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -139,6 +137,12 @@ function GrantsPage({ data }: { data: GrantPageData }) {
 }
 
 export default GrantsPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<GrantPageQuery>) {
+  const { name } = data.grantPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query GrantsPageQuery {

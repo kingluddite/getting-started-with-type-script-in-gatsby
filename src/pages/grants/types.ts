@@ -1,4 +1,4 @@
-export interface GrantPageData {
+export interface GrantPageQuery {
   grantPage: {
     id: string;
     name: string;

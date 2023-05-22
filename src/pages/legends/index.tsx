@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 
 // components
 import SEO from '@shared/SEO';
@@ -18,11 +18,11 @@ import ImageContainer from '@components/atoms/images/ImageContainer';
 import { StyledLegendGrid, StyledSection } from './styles';
 
 // types
-import { LegendsPageProps } from './types';
+import { LegendsPageQuery } from './types';
 
-function LegendsPage({ data }: LegendsPageProps) {
+function LegendsPage({ data }: { data: LegendsPageQuery }) {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     quoteManyBlock,
@@ -34,7 +34,6 @@ function LegendsPage({ data }: LegendsPageProps) {
 
   return (
     <div>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -88,6 +87,12 @@ function LegendsPage({ data }: LegendsPageProps) {
 }
 
 export default LegendsPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<LegendsPageQuery>) {
+  const { name } = data.legendsPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query LegendsPageQuery {

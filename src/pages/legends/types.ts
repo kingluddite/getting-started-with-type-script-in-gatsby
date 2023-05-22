@@ -55,7 +55,7 @@ export interface QuoteManyBlock {
   quoteAuthor: string;
 }
 
-export interface LegendsPageQueryData {
+export interface LegendsPageQuery {
   legendsPage: {
     name: string;
     headingOne: string;
@@ -66,8 +66,4 @@ export interface LegendsPageQueryData {
     hasGallery: boolean;
     galleryManyBlock: GalleryManyBlock[];
   };
-}
-
-export interface LegendsPageProps {
-  data: LegendsPageQueryData;
 }

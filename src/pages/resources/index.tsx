@@ -1,6 +1,6 @@
 // npm
 import React, { useCallback, useEffect, useState } from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,12 +22,12 @@ import { StyledInput } from '@components/atoms/forms/FormInput/styles';
 import CardGridContainer from '@components/molecules/cards/CardGridContainer/styles';
 
 // types
-import { ResourcesPageProps } from './types';
+import { ResourcesPageQuery } from './types';
 
-function ResourcesPage({ data }: ResourcesPageProps) {
+function ResourcesPage({ data }: { data: ResourcesPageQuery }) {
   const {
     headingOne,
-    name,
+    // name,
     subheading,
     resourcesManyBlock,
     // galleryManyBlock,
@@ -62,7 +62,6 @@ function ResourcesPage({ data }: ResourcesPageProps) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -137,6 +136,12 @@ function ResourcesPage({ data }: ResourcesPageProps) {
 }
 
 export default ResourcesPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<ResourcesPageQuery>) {
+  const { name } = data.resourcesPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query ResourcesPageQuery {

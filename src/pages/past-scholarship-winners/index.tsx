@@ -1,6 +1,6 @@
 // npm
 import React, { useEffect, useState, useCallback } from 'react';
-import { PageProps, graphql } from 'gatsby';
+import { HeadProps, PageProps, graphql } from 'gatsby';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 // components
@@ -26,14 +26,14 @@ import {
 import {
   PastWinner,
   PastWinnersPageContext,
-  PastWinnersPageData,
+  PastWinnersPageQuery,
 } from './types';
 
 const PastWinnersPage: React.FC<
-  PageProps<PastWinnersPageData, PastWinnersPageContext>
+  PageProps<PastWinnersPageQuery, PastWinnersPageContext>
 > = ({ data, pageContext }) => {
   const {
-    name,
+    // name,
     headingOne,
     subheading,
     // galleryManyBlock,
@@ -77,7 +77,6 @@ const PastWinnersPage: React.FC<
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -155,6 +154,12 @@ const PastWinnersPage: React.FC<
 };
 
 export default PastWinnersPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<PastWinnersPageQuery>) {
+  const { name } = data.pastWinnerPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query PastWinnersPageQuery($skip: Int = 0, $pageSize: Int = 10) {

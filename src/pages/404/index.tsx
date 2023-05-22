@@ -1,15 +1,18 @@
+// npm
 import React from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
 import SEO from '@components/shared/SEO';
 import ContentBlock from '@components/molecules/ContentBlock';
 import LayoutContainer from '@components/shared/layout/LayoutContainer';
-// import Gallery from '@components/atoms/images/Gallery';
 import HeroHeading from '@components/molecules/HeroHeading';
 import Logo from '@components/atoms/Logo';
 import ImageContainer from '@components/atoms/images/ImageContainer';
+
+// images
+// import Gallery from '@components/atoms/images/Gallery';
 
 // styles
 import { StyledSection } from './styles';
@@ -21,7 +24,7 @@ import { NotFoundProps } from './types';
 const NotFound: React.FC<PageProps<NotFoundProps>> = ({ data }) => {
   const {
     headingOne,
-    name,
+    // name,
     subheading,
     notFoundTextBlock,
     // galleryManyBlock,
@@ -31,7 +34,6 @@ const NotFound: React.FC<PageProps<NotFoundProps>> = ({ data }) => {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -62,6 +64,12 @@ const NotFound: React.FC<PageProps<NotFoundProps>> = ({ data }) => {
 };
 
 export default NotFound;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<NotFoundProps>) {
+  const { name } = data.notFoundPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query NotFoundPageQuery {

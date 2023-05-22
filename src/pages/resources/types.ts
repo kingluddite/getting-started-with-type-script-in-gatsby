@@ -1,4 +1,3 @@
-import { PageProps } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface Resource {
@@ -76,8 +75,4 @@ export interface ResourcesPageQuery {
     hasGallery: boolean;
     galleryManyBlock: GalleryImage[];
   };
-}
-
-export interface ResourcesPageProps extends PageProps {
-  data: ResourcesPageQuery;
 }

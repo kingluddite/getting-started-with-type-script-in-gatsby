@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { graphql } from 'gatsby';
+import { HeadProps, PageProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
@@ -13,13 +13,21 @@ import Button from '@components/atoms/buttons/Button';
 
 // images
 import ImageContainer from '@components/atoms/images/ImageContainer';
+
+// styles
 import { StyledSection } from './styles';
+
+// images
 // import Gallery from '../components/atoms/Gallery';
 
-function StudentAnimationShowcasePage({ data }) {
-  console.log(data);
+// types
+import { SASPageQuery } from './types';
+
+const StudentAnimationShowcasePage: React.FC<PageProps<SASPageQuery>> = ({
+  data,
+}) => {
   const {
-    name,
+    // name,
     headingOne,
     headingOneButtonPath,
     headingOneButtonText,
@@ -35,7 +43,6 @@ function StudentAnimationShowcasePage({ data }) {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo />
         <h1>{headingOne}</h1>
@@ -54,7 +61,7 @@ function StudentAnimationShowcasePage({ data }) {
       <LayoutContainer hasSectionGaps>
         <StyledSection>
           <ContentBlock
-            showCallToAction="true"
+            showCallToAction={true}
             callToActionLink="https://form.jotform.com/230654188700152"
             callToActionType="external"
             callToActionTitle="2023 Student Animation Showcase Submission Form"
@@ -71,8 +78,8 @@ function StudentAnimationShowcasePage({ data }) {
             heading={headingTwo}
             showImage={false}
             showCallToAction={false}
-            callToActionLink={false}
-            callToActionTitle={false}
+            callToActionLink=""
+            callToActionTitle=""
             callToActionType="external"
           >
             <PortableText value={sasTextBlock} />
@@ -84,9 +91,15 @@ function StudentAnimationShowcasePage({ data }) {
       </LayoutContainer>
     </>
   );
-}
+};
 
 export default StudentAnimationShowcasePage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<SASPageQuery>) {
+  const { name } = data.sasPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query SasPageQuery {

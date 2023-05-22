@@ -1,5 +1,3 @@
-import { PageProps } from 'gatsby';
-
 export interface Quote {
   id: string;
   quoteContent: string;
@@ -32,7 +30,7 @@ export interface TimelineEvent {
   id: string;
 }
 
-export interface HistoryPageData {
+export interface HistoryPageQuery {
   historyPage: {
     name: string;
     headingOne: string;
@@ -60,30 +58,26 @@ export interface HistoryPageData {
     hasGallery: boolean;
     quoteManyBlock?: Quote[];
     galleryManyBlock?: GalleryImage[];
-    timelineImg?: {
-      alt: string;
-      asset: {
-        _id: string;
-        gatsbyImageData: any; // Update with the appropriate type for `gatsbyImageData`
-      };
-      hotspot: {
-        x: number;
-        y: number;
-        width: number;
-        height: number;
-      };
-      crop: {
-        top: number;
-        right: number;
-        left: number;
-        bottom: number;
-      };
-    };
+    // timelineImg?: {
+    //   alt: string;
+    //   asset: {
+    //     _id: string;
+    //     gatsbyImageData: any; // Update with the appropriate type for `gatsbyImageData`
+    //   };
+    //   hotspot: {
+    //     x: number;
+    //     y: number;
+    //     width: number;
+    //     height: number;
+    //   };
+    //   crop: {
+    //     top: number;
+    //     right: number;
+    //     left: number;
+    //     bottom: number;
+    //   };
+    // };
     timelineTextBlock: any;
     timelineManyBlock?: TimelineEvent[];
   };
-}
-
-export interface HistoryPageProps extends PageProps {
-  data: HistoryPageData;
 }

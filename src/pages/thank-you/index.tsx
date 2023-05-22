@@ -1,6 +1,6 @@
 // npm
 import React from 'react';
-import { PageProps, graphql } from 'gatsby';
+import { HeadProps, PageProps, graphql } from 'gatsby';
 import { PortableText } from '@portabletext/react';
 
 // components
@@ -16,12 +16,12 @@ import Logo from '@components/atoms/Logo';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // types
-import { ThankYouPageData } from './types';
+import { ThankYouPageQuery } from './types';
 
-const ThankYouPage: React.FC<PageProps<ThankYouPageData>> = ({ data }) => {
+const ThankYouPage: React.FC<PageProps<ThankYouPageQuery>> = ({ data }) => {
   const {
     headingOne,
-    name,
+    // name,
     subheading,
     thankYouTextBlock,
     // galleryManyBlock,
@@ -31,7 +31,6 @@ const ThankYouPage: React.FC<PageProps<ThankYouPageData>> = ({ data }) => {
 
   return (
     <>
-      <SEO title={name} />
       <HeroHeading>
         <Logo size="large" />
         <h1>{headingOne}</h1>
@@ -56,6 +55,14 @@ const ThankYouPage: React.FC<PageProps<ThankYouPageData>> = ({ data }) => {
     </>
   );
 };
+
+export default ThankYouPage;
+
+// a helper function Head used to generate SEO
+export function Head({ data }: HeadProps<ThankYouPageQuery>) {
+  const { name } = data.thankYouPage;
+  return <SEO title={name}></SEO>;
+}
 
 export const query = graphql`
   query ThankYouPageQuery {
@@ -106,5 +113,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default ThankYouPage;

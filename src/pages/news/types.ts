@@ -1,4 +1,4 @@
-export interface NewsPageData {
+export interface NewsPageQuery {
   newsPage: {
     name: string;
     headingOne: string;

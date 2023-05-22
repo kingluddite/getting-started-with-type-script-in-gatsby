@@ -45,7 +45,7 @@ export interface ScholarshipRequirementForStudentBlock {
   };
 }
 
-export interface ScholarshipPageData {
+export interface ScholarshipsPageQuery {
   scholarshipPage: {
     name: string;
     headingOne: string;

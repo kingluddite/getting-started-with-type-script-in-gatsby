@@ -20,7 +20,7 @@ export interface PastWinnersPageContext {
   currentPage?: number;
 }
 
-export interface PastWinnersPageData {
+export interface PastWinnersPageQuery {
   pastWinnerPage: {
     name: string;
     headingOne: string;

@@ -1,5 +1,3 @@
-import { PageProps } from 'gatsby';
-
 export interface EventData {
   id: string;
   eventTitle: string;
@@ -28,7 +26,7 @@ export interface EventData {
   };
 }
 
-export interface EventsPageData {
+export interface EventsPageQuery {
   eventsPage: {
     id: string;
     name: string;
@@ -77,8 +75,4 @@ export interface EventsPageData {
     totalCount: number;
     nodes: EventData[];
   };
-}
-
-export interface EventsPageProps extends PageProps {
-  data: EventsPageData;
 }
