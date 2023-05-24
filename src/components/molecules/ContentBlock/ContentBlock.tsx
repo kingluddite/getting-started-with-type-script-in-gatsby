@@ -4,7 +4,7 @@ import React from 'react';
 // components
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
-import Button from '@components/atoms/buttons/MinorButton';
+import Button from '@components/atoms/buttons/Button';
 
 // styles
 import { StyledContent, StyledContentBlock } from './styles';

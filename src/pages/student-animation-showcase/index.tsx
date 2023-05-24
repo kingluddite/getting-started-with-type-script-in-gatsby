@@ -66,10 +66,14 @@ const StudentAnimationShowcasePage: React.FC<PageProps<SASPageQuery>> = ({
             callToActionType="external"
             callToActionTitle="2023 Student Animation Showcase Submission Form"
           >
-            <h2>Submissions now open for Student Animation Showcase 2023</h2>
+            <h2>
+              Deadline for Student Animation Showcase Submissions is June 12th,
+              2023
+            </h2>
             <div style={{ fontWeight: `bold`, fontSize: `18px` }}>
-              To participate in the 2023 Student Animation Showcase please click
-              on the button below:
+              Please follow all the instructions to submit your materials for
+              the 2023 Student Animation Showcase by clicking on the button
+              below:
             </div>
           </ContentBlock>
         </StyledSection>

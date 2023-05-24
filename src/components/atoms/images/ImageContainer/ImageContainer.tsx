@@ -1,13 +1,11 @@
-// npm
-import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React from 'react';
 
 // styles
 import { StyledFigure } from './styles';
 
 // types
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
-import type { ExtendedGatsbyImageProps, ImageContainerProps } from './types';
+import type { ImageContainerProps } from './types';
 
 const ImageContainer: React.FC<ImageContainerProps> = ({
   width,
@@ -17,31 +15,30 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
   type,
   ...props
 }) => {
-  const imageData = getImage(image) as IGatsbyImageData | undefined;
+  let imageData = null;
+
+  if (type !== `static`) {
+    imageData = getImage(image);
+  }
 
   switch (type) {
     case `static`:
-      // we're checking if imageData is truthy before rendering it as an GatsbyImage. If it's undefined, we render the image prop directly
-      return imageData ? (
-        <StyledFigure style={{ width: `auto`, height: `auto` }}>
-          <GatsbyImage image={imageData} alt={alt} />
-        </StyledFigure>
-      ) : (
+      return (
         <StyledFigure style={{ width: `auto`, height: `auto` }}>
           {image}
         </StyledFigure>
       );
     default:
-      return (
-        <StyledFigure style={{ width: `auto`, height: `auto` }}>
-          {/* A type assertion to cast the imageData variable to the IGatsbyImageData type when passing it to the GatsbyImage component. */}
+      return imageData ? (
+        <StyledFigure style={{ width, height }}>
           <GatsbyImage
-            width={width}
-            height={height}
-            {...(props as ExtendedGatsbyImageProps)} // cast props to ExtendedGatsbyImageProps
+            image={imageData}
+            alt={alt}
+            style={{ width: `100%`, height: `100%` }}
+            {...props}
           />
         </StyledFigure>
-      );
+      ) : null;
   }
 };
 

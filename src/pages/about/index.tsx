@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import type { PageProps, HeadProps } from 'gatsby';
+// import { StaticImage } from 'gatsby-plugin-image';
 
 // components
 import HeroHeading from '@components/molecules/HeroHeading';

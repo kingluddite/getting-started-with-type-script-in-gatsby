@@ -23,6 +23,8 @@ function MinorButton({
   children,
   ...props
 }: MinorButtonProps) {
+  console.log(`minor`);
+
   // Switch statement to determine the button type based on the actionType
   switch (actionType) {
     case `link`:
