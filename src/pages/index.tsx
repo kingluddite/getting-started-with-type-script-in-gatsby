@@ -18,8 +18,8 @@ import Button from '@components/atoms/buttons/Button';
 import SEO from '@components/shared/SEO';
 import LayoutContainer from '@components/shared/layout/LayoutContainer';
 import MediumCard from '@components/molecules/cards/MediumCard';
-import Gallery from '@components/atoms/images/Gallery';
-import type { GalleryProps } from '@components/atoms/images/Gallery/Gallery';
+// import Gallery from '@components/atoms/images/Gallery';
+
 import EventPostList from '@components/molecules/blogs/EventPostList';
 import LatestNewsList from '@components/molecules/blogs/LatestNewsList';
 
@@ -35,6 +35,7 @@ import {
 
 // types
 import type { HomePageQueryData } from './home/types';
+// import type { GalleryProps } from '@components/atoms/images/Gallery/Gallery';
 
 // Define the HomePage component
 const HomePage = ({
@@ -50,8 +51,8 @@ const HomePage = ({
     whatWeProvideManyHeading,
     whatWeProvideBlock,
     newsManyHeading,
-    hasGallery,
-    galleryManyBlock,
+    // hasGallery,
+    // galleryManyBlock,
   } = homePage;
 
   // Set up state for the video player
@@ -190,7 +191,7 @@ const HomePage = ({
         </StyledSection>
 
         <StyledSection>
-          {hasGallery && galleryManyBlock ? ( // Conditional rendering of a Gallery component if there's a gallery available
+          {/* {hasGallery && galleryManyBlock ? ( // Conditional rendering of a Gallery component if there's a gallery available
             <Gallery
               images={
                 // Mapping over an array of objects to create images for the gallery
@@ -203,7 +204,7 @@ const HomePage = ({
                 })) as GalleryProps['images']
               }
             />
-          ) : null}
+          ) : null} */}
         </StyledSection>
       </LayoutContainer>
     </>

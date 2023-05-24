@@ -29,6 +29,13 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: path.resolve(__dirname, `src`, `pages`),
+        ignore: [`**/styles.tsx`, `**/types.ts`, `**/mockData.ts`],
+      },
+    },
     `gatsby-plugin-vanilla-extract`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,

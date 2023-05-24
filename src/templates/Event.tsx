@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { PortableText } from '@portabletext/react';
 
+// components
 import HeroHeading from '@components/molecules/HeroHeading';
 import ContentBlock from '@components/molecules/ContentBlock';
 import SEO from '@components/shared/SEO';
@@ -12,12 +13,13 @@ import Button from '@components/atoms/buttons/Button';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // styles
-import { StyledSection } from './styles';
+import { StyledSection } from './Event/styles';
 
 // types
-import { EventSinglePageProps } from './types';
+// import { EventSinglePageProps } from './Event/types';
 
-export default function SingleEventPage({ data }: EventSinglePageProps) {
+function SingleEventPage({ data }) {
+  // function SingleEventPage({ data }: EventSinglePageProps) {
   const { eventDate, eventTitle, eventText, eventImg } = data.eventSinglePage;
   return (
     <>
@@ -46,6 +48,8 @@ export default function SingleEventPage({ data }: EventSinglePageProps) {
     </>
   );
 }
+
+export default SingleEventPage;
 
 export const query = graphql`
   query ($slug: String!) {

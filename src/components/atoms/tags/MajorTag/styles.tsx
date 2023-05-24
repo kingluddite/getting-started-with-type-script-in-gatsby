@@ -2,9 +2,9 @@
 import styled, { css } from 'styled-components';
 
 // types
-import { MajorTagProps } from './types';
+import { StyledTagMajorProps } from './types';
 
-export const MajorStyles = css<MajorTagProps>`
+export const MajorStyles = css<StyledTagMajorProps>`
   background: ${(props) =>
     props.$color === `grey` ? `var(--c-grey-1)` : `var(--c-yellow-1)`};
   color: ${(props) =>
@@ -21,6 +21,6 @@ export const MajorStyles = css<MajorTagProps>`
   text-transform: uppercase;
 `;
 
-export const StyledTagMajor = styled.span<MajorTagProps>`
+export const StyledTagMajor = styled.span<StyledTagMajorProps>`
   ${MajorStyles}
 `;

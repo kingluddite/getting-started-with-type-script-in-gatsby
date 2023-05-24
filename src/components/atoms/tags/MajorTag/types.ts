@@ -5,3 +5,9 @@ export interface MajorTagProps {
   $color?: ColorType;
   color?: ColorType;
 }
+
+export interface StyledTagMajorProps {
+  children: string;
+  $color?: ColorType;
+  color?: ColorType;
+}

@@ -8,7 +8,7 @@ import { StyledTagMajor } from './styles';
 import { MajorTagProps } from './types';
 
 function MajorTag({ text, color }: MajorTagProps) {
-  return <StyledTagMajor $color={color} text={text} />;
+  return <StyledTagMajor $color={color}>{text}</StyledTagMajor>;
 }
 
 export default MajorTag;
