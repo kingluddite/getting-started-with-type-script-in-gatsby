@@ -13,13 +13,12 @@ import Button from '@components/atoms/buttons/Button';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // styles
-import { StyledSection } from './Event/styles';
+import { StyledSection } from './styles';
 
 // types
-// import { EventSinglePageProps } from './Event/types';
+import { EventSinglePageProps } from './types';
 
-function SingleEventPage({ data }) {
-  // function SingleEventPage({ data }: EventSinglePageProps) {
+function SingleEventPage({ data }: EventSinglePageProps) {
   const { eventDate, eventTitle, eventText, eventImg } = data.eventSinglePage;
   return (
     <>
