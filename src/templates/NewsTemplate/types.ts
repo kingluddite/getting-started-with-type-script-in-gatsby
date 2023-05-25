@@ -1,6 +1,6 @@
 import { PageProps } from 'gatsby';
 
-export interface NewsSinglePageData {
+export interface NewsTemplateData {
   id: string;
   newsTag: string;
   newsPostTitle: string;
@@ -11,11 +11,11 @@ export interface NewsSinglePageData {
       gatsbyImageData: any;
     };
   } | null;
-  newsSinglePageTextBlock: any; // Update the type as needed
+  newsTextBlock: any; // Update the type as needed
 }
 
-export interface SingleNewsPageProps extends PageProps {
+export interface NewsTemplateProps extends PageProps {
   data: {
-    newsSinglePage: NewsSinglePageData;
+    news: NewsTemplateData;
   };
 }

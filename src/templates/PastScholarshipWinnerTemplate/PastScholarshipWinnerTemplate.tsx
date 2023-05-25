@@ -11,11 +11,11 @@ import Button from '@components/atoms/buttons/Button';
 import LayoutContainer from '@components/shared/layout/LayoutContainer';
 import { StyledSection } from './styles';
 import ContentBlock from '@components/molecules/ContentBlock';
-import { SinglePastWinnerPageProps } from './types';
+import { PastScholarshipWinnerTemplateProps } from './types';
 
-const SinglePastWinnerPage: React.FC<SinglePastWinnerPageProps> = ({
-  data,
-}) => {
+const PastScholarshipWinnerTemplate: React.FC<
+  PastScholarshipWinnerTemplateProps
+> = ({ data }) => {
   const { pastWinnerTitle, pastWinnerImg, publishDate, pastWinnerTextBlock } =
     data.pastWinnerSinglePage;
   return (
@@ -57,13 +57,11 @@ const SinglePastWinnerPage: React.FC<SinglePastWinnerPageProps> = ({
   );
 };
 
-export default SinglePastWinnerPage;
+export default PastScholarshipWinnerTemplate;
 
 export const query = graphql`
   query ($slug: String!) {
-    pastWinnerSinglePage: sanityPastWinnerBlog(
-      slug: { current: { eq: $slug } }
-    ) {
+    pastWinnerBlog: sanityPastWinnerBlog(slug: { current: { eq: $slug } }) {
       pastWinnerTitle
       publishDate(formatString: "LL")
       pastWinnerImg: pageImageBlock {

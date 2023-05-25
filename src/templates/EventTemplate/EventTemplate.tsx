@@ -16,10 +16,10 @@ import ImageContainer from '@components/atoms/images/ImageContainer';
 import { StyledSection } from './styles';
 
 // types
-import { EventSinglePageProps } from './types';
+import { EventTemplateProps } from './types';
 
-function SingleEventPage({ data }: EventSinglePageProps) {
-  const { eventDate, eventTitle, eventText, eventImg } = data.eventSinglePage;
+function EventTemplate({ data }: EventTemplateProps) {
+  const { eventDate, eventTitle, eventText, eventImg } = data.event;
   return (
     <>
       <SEO title={eventTitle} />
@@ -48,11 +48,11 @@ function SingleEventPage({ data }: EventSinglePageProps) {
   );
 }
 
-export default SingleEventPage;
+export default EventTemplate;
 
 export const query = graphql`
   query ($slug: String!) {
-    eventSinglePage: sanityEventBlog(slug: { current: { eq: $slug } }) {
+    event: sanityEventBlog(slug: { current: { eq: $slug } }) {
       id
       eventDate(formatString: "LL")
       eventTitle

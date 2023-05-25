@@ -1,6 +1,6 @@
-export type EventSinglePageProps = {
+export type EventTemplateProps = {
   data: {
-    eventSinglePage: {
+    event: {
       id: string;
       eventDate: string;
       eventTitle: string;

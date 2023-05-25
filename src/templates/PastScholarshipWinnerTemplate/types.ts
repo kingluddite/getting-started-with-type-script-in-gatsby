@@ -1,6 +1,6 @@
 import { PageProps } from 'gatsby';
 
-export interface PastWinnerSinglePageData {
+export interface PastScholarshipWinnerTemplateData {
   pastWinnerTitle: string;
   publishDate: string;
   pastWinnerImg: {
@@ -12,8 +12,8 @@ export interface PastWinnerSinglePageData {
   pastWinnerTextBlock: any; // Update the type as needed
 }
 
-export interface SinglePastWinnerPageProps extends PageProps {
+export interface PastScholarshipWinnerTemplateProps extends PageProps {
   data: {
-    pastWinnerSinglePage: PastWinnerSinglePageData;
+    pastWinnerSinglePage: PastScholarshipWinnerTemplateData;
   };
 }

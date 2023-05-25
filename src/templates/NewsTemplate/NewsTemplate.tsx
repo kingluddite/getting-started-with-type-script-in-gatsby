@@ -15,16 +15,16 @@ import ContentBlock from '@components/molecules/ContentBlock';
 import { StyledSection } from './styles';
 
 // types
-import { SingleNewsPageProps } from './types';
+import { NewsTemplateProps } from './types';
 
-const SingleNewsPage: React.FC<SingleNewsPageProps> = ({ data }) => {
+const NewsTemplate: React.FC<NewsTemplateProps> = ({ data }) => {
   const {
     newsPostTitle,
     newsPostImg,
     publishDate,
     // newsTag,
-    newsSinglePageTextBlock,
-  } = data.newsSinglePage;
+    newsTextBlock,
+  } = data.news;
   return (
     <>
       <SEO title={newsPostTitle} />
@@ -52,7 +52,7 @@ const SingleNewsPage: React.FC<SingleNewsPageProps> = ({ data }) => {
       <LayoutContainer hasSectionGaps>
         <StyledSection>
           <ContentBlock>
-            <PortableText value={newsSinglePageTextBlock} />
+            <PortableText value={newsTextBlock} />
           </ContentBlock>
         </StyledSection>
       </LayoutContainer>
@@ -60,11 +60,11 @@ const SingleNewsPage: React.FC<SingleNewsPageProps> = ({ data }) => {
   );
 };
 
-export default SingleNewsPage;
+export default NewsTemplate;
 
 export const query = graphql`
   query ($slug: String!) {
-    newsSinglePage: sanityNews(slug: { current: { eq: $slug } }) {
+    news: sanityNews(slug: { current: { eq: $slug } }) {
       id
       newsTag
       newsPostTitle
@@ -75,7 +75,7 @@ export const query = graphql`
           gatsbyImageData
         }
       }
-      newsSinglePageTextBlock: _rawContent
+      newsTextBlock: _rawContent
     }
   }
 `;
