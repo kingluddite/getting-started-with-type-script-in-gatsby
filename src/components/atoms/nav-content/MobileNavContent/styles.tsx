@@ -21,6 +21,8 @@ export const StyledMenuButtonContainer = styled.div`
 `;
 
 export const StyledToggleButton = styled.button`
+  width: var(--size-2);
+  height: var(--size-1dn);
   position: relative;
   display: flex;
   justify-content: center;
@@ -30,9 +32,20 @@ export const StyledToggleButton = styled.button`
   background: none;
   border: none;
   padding: 0;
-  height: var(--size-1dn);
-  width: var(--size-2);
   transition: all 0.3s var(--animation-bezier);
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    > div,
+    > div::before,
+    > div::after {
+      transition: none;
+      width: var(--size-1dn);
+      height: 3px;
+      border-radius: 5px;
+      background: var(--c-yellow-1);
+      position: absolute;
+    }
+  }
 
   > div,
   > div::before,
@@ -75,8 +88,8 @@ export const StyledToggleButton = styled.button`
 `;
 
 export const StyledMenuSidebar = styled.div<StyledMenuSidebarProps>`
-  height: 100%;
   width: 100%;
+  height: 100%;
   transform: ${(props) =>
     props.$open ? `translateX(0))` : `translateX(-100%)`};
   visibility: ${(props) => (props.$open ? `visible` : `hidden`)};
@@ -123,14 +136,23 @@ export const StyledSocialContainer = styled.div`
 `;
 
 export const StyledSocialLink = styled.a`
-  :hover svg {
-    ${activeSocialStyle}
+  @media screen and (prefers-reduced-motion: reduce) {
+    > svg {
+      transition: none;
+      color: var(--c-grey-4);
+      font-size: var(--size-2);
+    }
   }
 
   > svg {
     transition: all 0.3s var(--animation-bezier);
     color: var(--c-grey-4);
     font-size: var(--size-2);
+  }
+
+  :hover svg,
+  :focus svg {
+    ${activeSocialStyle}
   }
 `;
 

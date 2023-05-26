@@ -17,7 +17,7 @@ export const StyledButtonScrollToTop = styled.button`
   margin: 0;
   padding: 0;
   border-radius: var(--radius-full);
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1), 0px 8px 20px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%), 0 8px 20px rgb(0 0 0 / 9%);
   cursor: pointer;
   position: fixed;
   bottom: var(--size-3);
@@ -29,8 +29,7 @@ export const StyledButtonScrollToTop = styled.button`
     background: var(--c-aef-white);
     color: var(--c-yellow-2);
     border: 1px solid var(--c-grey-2);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18),
-      0px 4px 14px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 18%), 0 4px 14px rgb(0 0 0 / 13%);
     transform: scale(0.95);
   }
 
@@ -45,7 +44,7 @@ export const StyledButtonScrollToTop = styled.button`
     outline: none;
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (width <= 1200px) {
     bottom: var(--size-1);
     right: var(--size-1);
   }

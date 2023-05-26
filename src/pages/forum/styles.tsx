@@ -63,9 +63,11 @@ export const StyledFAQ = styled.ul`
   padding: 0;
   margin: 0;
   color: var(--c-dark-grey-3);
+
   h3 {
     color: var(--c-dark-grey-4);
   }
+
   p {
     padding-left: var(--size-1);
   }

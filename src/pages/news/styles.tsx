@@ -8,10 +8,11 @@ export const StyledTwoColumnSection = styled.section`
   justify-content: space-between;
   gap: var(--size-2h);
   width: 100%;
+
   & > * {
     max-width: calc(50% - var(--size-1n));
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     & > * {
       max-width: 100%;
     }

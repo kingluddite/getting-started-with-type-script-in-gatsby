@@ -17,14 +17,12 @@ export const StyledFontAwesomeIconRotated = styled(FontAwesomeIcon)`
 export const MinorStyles = css`
   background: none;
   color: var(--dark-grey-4);
-
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0;
   gap: var(--size-half);
-
   cursor: pointer;
   font-style: normal;
   font-weight: 600;
@@ -37,7 +35,6 @@ export const MinorStyles = css`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0;
     gap: var(--size-half);
     margin: 0;
     padding: 0;
@@ -46,24 +43,33 @@ export const MinorStyles = css`
   &:hover {
     color: var(--c-yellow-2);
   }
-  &:hover > span {
+
+  &:hover > span,
+  &:focus > span {
     text-decoration: underline;
   }
-  &:hover .minor-icon-right {
+
+  &:hover .minor-icon-right,
+  &:focus .minor-icon-right {
     transform: translateX(var(--size-nudge));
   }
-  &:hover .minor-icon-up-right {
+
+  &:hover .minor-icon-up-right,
+  &:focus .minor-icon-up-right {
     transform: translate(var(--size-nudge), calc(-1 * var(--size-nudge)))
       rotate(315deg);
   }
+
   &:focus {
     outline: 1px solid var(--c-browser-blue-1);
   }
+
   &:active {
     color: var(--c-yellow-3);
     text-decoration: none;
     outline: none;
   }
+
   &:active > span {
     text-decoration: none;
   }

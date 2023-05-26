@@ -10,6 +10,7 @@ export const StyledContentContainer = styled.div<StyledContentContainerProps>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   /* justify-content: space-between; */
   justify-content: space-evenly;
   padding: var(--size-1h);

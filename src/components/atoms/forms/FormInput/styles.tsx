@@ -37,6 +37,7 @@ export const StyledCheckbox = styled.div`
   display: flex;
   align-items: center;
   gap: var(--size-half);
+
   * {
     cursor: pointer;
   }

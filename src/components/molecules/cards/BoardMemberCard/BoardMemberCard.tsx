@@ -48,7 +48,7 @@ const BoardMemberCard: React.FC<BoardMemberCardProps> = ({
               height={128}
               width={128}
               borderRadius="var(--radius-full)"
-              className="default-image--center"
+              className="default-image-center"
             />
           )}
           <StyledMetaText>

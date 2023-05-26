@@ -6,7 +6,7 @@ import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export const activeCardStyles = css`
   background: var(--c-white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), 0 16px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 20%), 0 16px 24px rgb(0 0 0 / 10%);
   transition: all 0.5s var(--animation-bezier);
 `;
 
@@ -28,7 +28,7 @@ export const StyledPostCardContainer = styled(
   border: 1px solid var(--c-grey-1);
   padding: ${(props) =>
     props.$type === `tomsBlog` ? `var(--size-1h)` : `var(--size-1)`};
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0), 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px rgb(0 0 0 / 0%), 0 0 1px rgb(0 0 0 / 0%);
   cursor: pointer;
   transition: all 0.5s var(--animation-bezier);
 
@@ -42,7 +42,7 @@ export const StyledPostCardContainer = styled(
     color: var(--c-yellow-1);
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (width <= 1000px) {
     flex-direction: column;
   }
 `;
@@ -55,7 +55,7 @@ export const StyledPostCardImg = styled(GatsbyImage)<StyledPostCardImgProps>`
   border-radius: var(--radius-md);
   width: 200px;
   height: 134px;
-  @media screen and (max-width: 1000px) {
+  @media screen and (width <= 1000px) {
     width: 100%;
   }
 `;

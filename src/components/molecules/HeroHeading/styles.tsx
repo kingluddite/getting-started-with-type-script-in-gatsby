@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const StyledHeroHeading = styled.section`
   position: relative;
   width: 100%;
+
   /* background: url('/images/tile.png'); */
-  background: #e9e9e9;
+  background: rgb(233 233 233);
   margin-top: -75px;
   padding-top: 75px;
   display: flex;
@@ -14,62 +15,77 @@ export const StyledHeroHeading = styled.section`
   overflow-x: hidden;
 
   .grad {
-    height: var(--size-7dn);
     width: 100%;
+    height: var(--size-7dn);
     z-index: 1;
   }
+
   .grad-top {
     display: none;
     margin-top: -75px;
-    background: linear-gradient(0deg, rgba(251, 251, 249, 0) 0%, #fbfbf9 100%);
+    background: linear-gradient(
+      0deg,
+      rgb(251 251 249 / 0%) 0%,
+      rgb(251 251 249) 100%
+    );
   }
+
   .grad-bottom {
     background: linear-gradient(
       180deg,
-      rgba(251, 251, 249, 0) 0%,
-      #fbfbf9 100%
+      rgb(251 251 249 / 0%) 0%,
+      rgb(251 251 249) 100%
     );
     height: clamp(var(--size-3n), -2.75rem + 26.6667vw, var(--size-7dn));
   }
+
   .grad-left {
+    width: var(--size-1dn);
+    height: 100%;
     display: none;
     position: absolute;
-    height: 100%;
     left: 0;
     bottom: 0;
-    width: var(--size-1dn);
     background: linear-gradient(
       270deg,
-      rgba(251, 251, 249, 0) 0%,
-      #fbfbf9 100%
+      rgb(251 251 249 / 0%) 0%,
+      rgb(251 251 249) 100%
     );
   }
+
   .grad-right {
+    width: var(--size-1dn);
+    height: 100%;
     display: none;
     position: absolute;
-    height: 100%;
     right: 0;
     bottom: 0;
-    width: var(--size-1dn);
-    background: linear-gradient(90deg, rgba(251, 251, 249, 0) 0%, #fbfbf9 100%);
+    background: linear-gradient(
+      90deg,
+      rgb(251 251 249 / 0%) 0%,
+      rgb(251 251 249) 100%
+    );
   }
+
   .wing {
     position: absolute;
     bottom: 0;
     height: 110%;
   }
+
   .wing-left {
     left: -5%;
     transform: scaleX(-1);
-    @media screen and (max-width: 1000px) {
+    @media screen and (width <= 1000px) {
       left: -15%;
       height: 110%;
       max-width: 70%;
     }
   }
+
   .wing-right {
     right: -5%;
-    @media screen and (max-width: 1000px) {
+    @media screen and (width <= 1000px) {
       right: -15%;
       height: 110%;
       max-width: 70%;
@@ -86,6 +102,7 @@ export const StyledHeroHeadingContentHome = styled.div`
   gap: var(--size-1h);
   gap: clamp(var(--size-dual-nudge), -0.25rem + 4.4444vw, var(--size-1h));
   z-index: 5;
+
   h1,
   h2,
   h3,
@@ -94,6 +111,7 @@ export const StyledHeroHeadingContentHome = styled.div`
     margin: 0;
     padding: 0;
   }
+
   p {
     color: var(--c-grey-4);
     font-size: var(--size-2n);
@@ -114,6 +132,7 @@ export const StyledHeroHeadingContent = styled.div`
   gap: var(--size-1h);
   gap: clamp(var(--size-dual-nudge), -0.25rem + 4.4444vw, var(--size-1h));
   z-index: 5;
+
   h1,
   h2,
   h3,
@@ -122,6 +141,7 @@ export const StyledHeroHeadingContent = styled.div`
     margin: 0;
     padding: 0;
   }
+
   p {
     color: var(--c-grey-4);
     font-size: var(--size-1h);

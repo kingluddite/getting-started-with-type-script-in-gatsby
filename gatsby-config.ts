@@ -36,7 +36,6 @@ const config: GatsbyConfig = {
         ignore: [`**/styles.tsx`, `**/types.ts`, `**/mockData.ts`],
       },
     },
-    `gatsby-plugin-vanilla-extract`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     // without this, errors on build with tsconfig!!!
@@ -61,7 +60,12 @@ const config: GatsbyConfig = {
         token: process.env.SANITY_TOKEN,
       },
     },
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `@danbruegge/gatsby-plugin-stylelint`,
+      options: {
+        files: [`**/*.styles.tsx`],
+      },
+    },
     {
       resolve: `gatsby-plugin-eslint`,
       options: {

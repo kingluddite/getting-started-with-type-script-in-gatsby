@@ -12,7 +12,7 @@ export const StyledBoardCard = styled.div`
   width: 1050px;
   max-width: 100%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     flex-flow: column;
   }
 `;
@@ -25,13 +25,13 @@ export const StyledMetaContainer = styled.div`
   gap: var(--size-1);
   border-right: 3px solid var(--c-grey-1);
   padding: var(--size-1h);
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     align-items: center;
     justify-content: inherit;
     border-bottom: 3px solid var(--c-grey-1);
     border-right: none;
 
-    .default-image--center {
+    .default-image-center {
       margin: auto;
     }
   }
@@ -39,7 +39,7 @@ export const StyledMetaContainer = styled.div`
 
 export const StyledGatsbyImage = styled(GatsbyImage)<StyledGatsbyImageProps>`
   border-radius: var(--radius-full);
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     display: flex;
     align-content: center;
     width: 128px;
@@ -49,6 +49,7 @@ export const StyledGatsbyImage = styled(GatsbyImage)<StyledGatsbyImageProps>`
 
 export const StyledMetaText = styled.div`
   margin-top: var(--size-1);
+
   h3 {
     margin-bottom: var(--size-half);
   }
@@ -59,7 +60,7 @@ export const StyledMetaText = styled.div`
     min-width: 200px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     h3,
     p {
       text-align: center;

@@ -9,22 +9,26 @@ export const StyledContentBlock = styled.section`
   gap: var(--size-2h);
   width: 785px;
   max-width: 100%;
+
   p {
     margin: 0;
     padding: 0;
   }
+
   h2 {
     text-align: center;
     margin: 0;
     padding: 0;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (width <= 480px) {
     gap: var(--size-1dn);
+
     h2 {
       width: 100%;
       text-align: left;
     }
+
     .c2a {
       width: 100%;
     }
@@ -33,11 +37,10 @@ export const StyledContentBlock = styled.section`
 
 export const StyledContent = styled.div`
   width: 100%;
+
   h1 {
-    font-family: Montserrat;
+    font-family: Montserrat, Arial, sans-serif;
     font-weight: bold;
-    font-size: var(--size-2n);
-    line-height: var(--size-2dn);
     font-size: clamp(var(--size-1n), -0.4824rem + 6.5882vw, var(--size-2n));
     line-height: clamp(var(--size-1d), 0.4412rem + 4.7059vw, var(--size-2dn));
     margin: var(--size-1) 0;
@@ -45,8 +48,6 @@ export const StyledContent = styled.div`
 
   h2 {
     font-weight: bold;
-    font-size: var(--size-2n);
-    line-height: var(--size-2dn);
     font-size: clamp(var(--size-1n), -0.4824rem + 6.5882vw, var(--size-2n));
     line-height: clamp(var(--size-1d), 0.4412rem + 4.7059vw, var(--size-2dn));
     margin: var(--size-1) 0;
@@ -54,8 +55,6 @@ export const StyledContent = styled.div`
 
   h3 {
     font-weight: 600;
-    font-size: var(--size-1h);
-    line-height: var(--size-1dn);
     font-size: clamp(var(--size-1n), 1.0625rem + 0.8333vw, var(--size-1h));
     line-height: clamp(var(--size-1h), 1.3125rem + 0.8333vw, var(--size-1dn));
     margin: var(--size-1) 0;
@@ -75,8 +74,10 @@ export const StyledContent = styled.div`
 
   a {
     color: var(--c-yellow-2);
+
+    &:hover,
     &:active,
-    &:hover {
+    &:focus {
       color: var(--c-yellow-1);
     }
   }

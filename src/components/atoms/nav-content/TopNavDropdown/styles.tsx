@@ -61,10 +61,26 @@ export const StyledMenuList = styled(MenuList)`
   border: none;
   border-top: 2px solid var(--c-yellow-1);
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 24px rgb(0 0 0 / 10%);
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &[data-reach-menu-list] {
+      animation: none;
+    }
+  }
 
   &[data-reach-menu-list] {
     animation: ${StyledMenuListAnimation} 0.6s var(--animation-bezier);
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &[data-reach-menu-list],
+    &[data-reach-menu-items] {
+      display: flex;
+      flex-direction: column;
+      grid-gap: var(--size-1);
+      transition: none;
+    }
   }
 
   &[data-reach-menu-list],
@@ -75,6 +91,23 @@ export const StyledMenuList = styled(MenuList)`
     transition: width 0.3s ease;
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
+    [data-reach-menu-item] {
+      padding: 0;
+      background: transparent;
+      color: var(--c-grey-4);
+      transition: none;
+
+      :hover,
+      :focus,
+      &[data-selected] {
+        color: var(--c-yellow-2);
+        transform: scale(1.03);
+        font-weight: 600;
+      }
+    }
+  }
+
   [data-reach-menu-item] {
     padding: 0;
     background: transparent;
@@ -82,6 +115,7 @@ export const StyledMenuList = styled(MenuList)`
     transition: 0.3s var(--animation-bezier);
 
     :hover,
+    :focus,
     &[data-selected] {
       color: var(--c-yellow-2);
       transform: scale(1.03);

@@ -11,7 +11,7 @@ export const StyledFormContent = styled.div`
   flex-direction: column;
   gap: var(--size-2n);
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (width >= 600px) {
     button[type='submit'] {
       align-self: flex-start;
     }
@@ -22,7 +22,7 @@ export const StyledFormRow = styled.div`
   gap: var(--size-1);
   grid-template-columns: 1fr 1fr;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (width <= 600px) {
     grid-template-columns: 1fr;
     gap: var(--size-2n);
     flex-direction: column;
@@ -40,6 +40,8 @@ export const StyledSection = styled.section`
 export const StyledInstructions = styled.p`
   text-align: center;
   font-size: 18px !important;
+
   /* padding-bottom: 20px; */
+
   /* color: grey !important; */
 `;

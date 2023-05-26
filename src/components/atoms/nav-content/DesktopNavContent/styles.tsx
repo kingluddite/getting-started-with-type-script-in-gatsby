@@ -35,13 +35,21 @@ export const StyledSocialContainer = styled.div<AnimationControlProps>`
 `;
 
 export const StyledSocialLink = styled.a`
-  :hover svg {
-    ${activeSocialStyle}
+  @media screen and (prefers-reduced-motion: reduce) {
+    > svg {
+      transition: none;
+      color: var(--c-grey-4);
+    }
   }
 
   > svg {
     transition: all 0.3s var(--animation-bezier);
     color: var(--c-grey-4);
+  }
+
+  :hover svg,
+  :focus svg {
+    ${activeSocialStyle}
   }
 `;
 
@@ -92,13 +100,21 @@ export const StyledToggleButton = styled.button`
   width: var(--size-1);
   padding: 0;
 
-  :hover svg {
-    ${activeSocialStyle}
+  @media screen and (prefers-reduced-motion: reduce) {
+    > svg {
+      transition: none;
+      color: var(--c-grey-4);
+    }
   }
 
   > svg {
     transition: all 0.3s var(--animation-bezier);
     color: var(--c-grey-4);
+  }
+
+  :hover svg,
+  :focus svg {
+    ${activeSocialStyle}
   }
 `;
 

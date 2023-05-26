@@ -19,18 +19,14 @@ const Typography = createGlobalStyle`
   }
   
   h1 {
-    font-family: Montserrat;
+    font-family: Montserrat, Arial, sans-serif;
     font-weight: bold;
-    font-size: var(--size-4);
-    line-height: var(--size-4n);
     font-size: clamp(var(--size-1dn), -0.1559rem + 8.4706vw, var(--size-4));
     line-height: clamp(var(--size-2), 0.0941rem + 8.4706vw, var(--size-4n));
   }
   
   h2 {
     font-weight: bold;
-    font-size: var(--size-2n);
-    line-height: var(--size-2dn);
     font-size: clamp(var(--size-1n),-0.4824rem + 6.5882vw, var(--size-2n));
     line-height: clamp(var(--size-1d), 0.4412rem + 4.7059vw, var(--size-2dn));
   }

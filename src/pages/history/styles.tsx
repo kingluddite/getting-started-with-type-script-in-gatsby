@@ -13,13 +13,14 @@ export const StyledTimeline = styled.section`
   display: flex;
   flex-flow: column;
   gap: var(--size-3);
+
   &::before {
+    width: 1px;
+    height: 100%;
     position: absolute;
     left: 25px;
     z-index: -1;
     content: '';
-    height: 100%;
-    width: 1px;
     background: var(--c-grey-1);
   }
 `;

@@ -15,10 +15,12 @@ export const PaginationStyles = styled.div`
     flex: 1;
     border-right: 1px solid var(--c-grey-3);
     text-decoration: none;
+
     &[aria-current],
     &.current {
       color: var(--c-yellow-1);
     }
+
     &[disabled] {
       pointer-events: none;
       color: var(--c-grey-1);

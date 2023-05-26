@@ -26,6 +26,7 @@ export const StyledMetaContainer = styled.div`
   h3 {
     margin-bottom: var(--size-half);
   }
+
   p {
     margin: 0;
   }

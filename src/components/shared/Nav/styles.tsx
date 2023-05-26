@@ -13,7 +13,7 @@ export const StyledNav = styled.nav`
   border-bottom: 1px solid var(--c-grey-1);
   padding: var(--size-half) 0;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (width <= 768px) {
     padding: var(--size-dual-nudge) 0;
     height: 56px;
   }
@@ -22,18 +22,20 @@ export const StyledNav = styled.nav`
     list-style: none;
   }
 
-  .desktopNav {
+  .desktop-nav {
     display: flex;
   }
-  .mobileNav {
+
+  .mobile-nav {
     display: none;
   }
 
-  @media only screen and (max-width: 768px) {
-    .desktopNav {
+  @media only screen and (width <= 768px) {
+    .desktop-nav {
       display: none;
     }
-    .mobileNav {
+
+    .mobile-nav {
       display: flex;
     }
   }

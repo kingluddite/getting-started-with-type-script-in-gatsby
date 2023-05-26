@@ -21,14 +21,42 @@ export const StyledTimeline = styled.section`
   gap: var(--size-3);
   width: 100%;
   max-width: 850px;
+
   &::before {
+    width: 1px;
+    height: 100%;
     position: absolute;
     left: 25px;
     z-index: -1;
     content: '';
-    height: 100%;
-    width: 1px;
     background: var(--c-grey-1);
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    .timeline-date {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-yellow-1);
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--c-grey-1);
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 10px rgb(0 0 0 / 20%), 0 16px 24px rgb(0 0 0 / 10%);
+      background: var(--c-white);
+      font-weight: bold;
+      font-size: var(--size-1);
+      line-height: var(--size-1);
+      transition: none;
+
+      .timeline-month {
+        font-weight: 400;
+        font-size: var(--size-dual-nudge);
+        line-height: var(--size-dual-nudge);
+      }
+    }
   }
 
   .timeline-date {
@@ -42,13 +70,13 @@ export const StyledTimeline = styled.section`
     height: 50px;
     border: 1px solid var(--c-grey-1);
     border-radius: var(--radius-full);
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2),
-      0px 16px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 20%), 0 16px 24px rgb(0 0 0 / 10%);
     background: var(--c-white);
     font-weight: bold;
     font-size: var(--size-1);
     line-height: var(--size-1);
     transition: transform 0.3s var(--animation-bezier);
+
     .timeline-month {
       font-weight: 400;
       font-size: var(--size-dual-nudge);
@@ -74,20 +102,24 @@ export const StyledDivider = styled.div`
   flex-direction: row;
   align-items: center;
   gap: var(--size-dual-nudge);
+
   p {
     width: 50px;
     text-align: center;
     flex: 0 0 auto;
     color: var(--c-grey-2);
   }
+
   span {
     flex: 1 1 0;
     background-color: var(--c-grey-2);
     width: 100%;
     position: relative;
     height: 1px;
+
     &::after {
       --arrow-size: 5px;
+
       content: '';
       position: absolute;
       right: 0;
@@ -96,7 +128,6 @@ export const StyledDivider = styled.div`
       height: 0;
       border-top: var(--arrow-size) solid transparent;
       border-bottom: var(--arrow-size) solid transparent;
-
       border-right: var(--arrow-size) solid var(--c-grey-2);
     }
   }

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 export const activeCardStyles = css`
   background: var(--c-white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), 0 16px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 20%), 0 16px 24px rgb(0 0 0 / 10%);
   transition: all 0.5s var(--animation-bezier);
 `;
 
@@ -20,7 +20,7 @@ export const cardContainerStyles = css`
   max-width: 282px;
   text-decoration: none;
   border: 1px solid var(--c-grey-1);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0), 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px rgb(0 0 0 / 0%), 0 0 1px rgb(0 0 0 / 0%);
   transition: all 0.5s var(--animation-bezier);
 `;
 
