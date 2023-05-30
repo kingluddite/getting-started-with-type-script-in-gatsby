@@ -24,7 +24,6 @@ const FormInput: FC<FormInputProps> = ({
   cols,
   type,
   placeholder,
-  required,
   errors,
 }) => {
   if (type === `checkbox`) {
@@ -46,7 +45,7 @@ const FormInput: FC<FormInputProps> = ({
           cols={cols}
           placeholder={placeholder}
           aria-invalid={errors && errors[id] ? `true` : `false`}
-          {...register(id, { required })}
+          {...register(id)}
         />
       ) : (
         <StyledInput
@@ -54,13 +53,13 @@ const FormInput: FC<FormInputProps> = ({
           type={type}
           placeholder={placeholder}
           aria-invalid={errors && errors[id] ? `true` : `false`}
-          {...register(id, { required })}
+          {...register(id)}
         />
       )}
 
       {errors && errors[id]?.type === `required` && (
         <StyledErrorMessage role="alert">
-          {errors[id]?.message}
+          {String(errors[id]?.message)}
         </StyledErrorMessage>
       )}
     </StyledInputGroup>

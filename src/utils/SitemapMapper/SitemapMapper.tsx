@@ -1,25 +1,25 @@
-// npm
 import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-// import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 // styles
 import { StyledSitemapMapper } from './styles';
 
-const SitemapMapper = (
+interface NavLink {
+  type?: string;
+  url: string;
+  text: string;
+}
+
+const sitemapMapper = (
   title: string,
-  links: {
-    type: string;
-    url: string;
-    text: string;
-  }[],
+  links: NavLink[],
   social?: {
     url: string;
     icon: string;
   }[],
-) => {
+): React.ReactNode => {
   return (
     <StyledSitemapMapper>
       <h3>{title}</h3>
@@ -38,18 +38,20 @@ const SitemapMapper = (
           ),
         )}
       </ul>
-      {social ? (
+      {social && social.length > 0 && (
         <ul className="social-links">
           {social.map((e) => (
             <a key={e.url} href={e.url} target="_blank" rel="noreferrer">
-              {/* <FontAwesomeIcon icon={[`fas`, e.icon as IconName]} /> */}
-              <FontAwesomeIcon icon={e.icon as IconProp} />
+              <FontAwesomeIcon
+                icon={e.icon as IconProp}
+                data-testid={`fa${e.icon}-icon`}
+              />
             </a>
           ))}
         </ul>
-      ) : undefined}
+      )}
     </StyledSitemapMapper>
   );
 };
 
-export default SitemapMapper;
+export default sitemapMapper;

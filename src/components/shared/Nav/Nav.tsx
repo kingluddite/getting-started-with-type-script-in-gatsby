@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // data
-import socialMediaData from '@utils/data/social-media';
-import navLinkData from '@utils/data/nav-links';
+import socialMediaData from '@utils/data/socialMedia/socialMediaData';
+import navLinkData from '@utils/data/navLinks/navLinksData';
 
 // components
 import DesktopNavContent from '@components/atoms/nav-content/DesktopNavContent';

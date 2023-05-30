@@ -3,12 +3,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // styles
+
+import { NavLink } from '@utils/data/navLinks/navLinksDataTypes';
 import { StyledLinks } from './styles';
 
-// types
-import type { NavLinkItem } from './types';
-
-function LinkMapper(data: NavLinkItem[]) {
+function linkMapper(data: NavLink[]) {
   return data.map((item, index) => {
     if (item.type === `gatsby`) {
       // Render a Link component for internal links
@@ -34,4 +33,4 @@ function LinkMapper(data: NavLinkItem[]) {
   });
 }
 
-export default LinkMapper;
+export default linkMapper;

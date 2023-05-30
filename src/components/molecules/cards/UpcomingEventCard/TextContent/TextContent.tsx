@@ -5,7 +5,7 @@ import Button from '@components/atoms/buttons/Button';
 import { StyledTextContainer, StyledTextHeading } from './styles';
 
 // utils
-import truncateText from '@utils/truncateText';
+import truncateText from '@utils/truncateText/truncateText';
 import { TextContentProps } from './types';
 
 function TextContent({

@@ -61,12 +61,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `@danbruegge/gatsby-plugin-stylelint`,
-      options: {
-        files: [`**/*.styles.tsx`],
-      },
-    },
-    {
       resolve: `gatsby-plugin-eslint`,
       options: {
         rulePaths: [gatsbyRequiredRules],

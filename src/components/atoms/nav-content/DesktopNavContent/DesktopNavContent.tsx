@@ -103,6 +103,7 @@ function DesktopNavContent({
             href={i.url}
             target="_blank"
             rel="noopener noreferrer"
+            data-testid={`social-link-${index}`}
           >
             <FontAwesomeIcon icon={i.icon} />
           </StyledSocialLink>
@@ -114,6 +115,7 @@ function DesktopNavContent({
         {/* Toggle button for social media links */}
         <StyledToggleButton
           type="button"
+          data-testid="toggle-button"
           onClick={() => setSocialMediaToggle(!socialMediaToggle)}
         >
           {/* Render appropriate icon based on toggle state */}

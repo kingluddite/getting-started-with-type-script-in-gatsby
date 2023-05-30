@@ -1,13 +1,10 @@
-// jsx
-import { NavLinkData as NavLinkDataInterface } from '@utils/data/nav-links';
+import { NavLinkData } from '@utils/data/navLinks/navLinksDataTypes';
 
-export interface NavLinkData {
-  about: string[];
-  engage: string[];
-  programs: {
-    text: string;
-    url: string;
-  }[];
+export interface CustomDOMStringList extends DOMStringList {
+  [index: number]: string;
+  length: number;
+  contains(value: string): boolean;
+  item(index: number): string | null;
 }
 
 export interface SocialMediaData {
@@ -17,7 +14,7 @@ export interface SocialMediaData {
 
 export interface DesktopNavContentProps {
   location: Location;
-  navLinkData: NavLinkDataInterface;
+  navLinkData: NavLinkData;
   socialMediaData: SocialMediaData[];
 }
 

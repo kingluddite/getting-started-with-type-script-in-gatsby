@@ -2,7 +2,7 @@
 import React from 'react';
 
 // utils
-import truncateText from '@utils/truncateText';
+import truncateText from '@utils/truncateText/truncateText';
 
 // styles
 import { StyledTextContainer, StyledTextHeading } from './styles';

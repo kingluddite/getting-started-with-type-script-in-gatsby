@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import Tag from '../tags/Tag';
 
 // utilities
-import { dateFormatter } from '../../../utils/dateFormatter';
+import { dateFormatter } from '../../../utils/dateFormatter/dateFormatter';
 
 // styles
 import { StyledMetaContainer } from './styles';

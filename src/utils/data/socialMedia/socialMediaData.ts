@@ -3,10 +3,14 @@ import {
   faTwitter,
   faYoutube,
   faInstagram,
-  // faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 
-const socialMediaData = [
+interface SocialMediaDataItem {
+  url: string;
+  icon: any; // IconDefinition didn't work
+}
+
+const socialMediaData: SocialMediaDataItem[] = [
   {
     url: `https://www.facebook.com/Animation-Educators-Forum-205710355776/`,
     icon: faFacebook,
@@ -23,10 +27,7 @@ const socialMediaData = [
     url: `https://www.instagram.com/animationeducatorsforum/`,
     icon: faInstagram,
   },
-  // {
-  //   url: 'https://www.linkedin.com',
-  //   icon: 'faLinkedin',
-  // },
+  // Additional social media data...
 ];
 
 export default socialMediaData;

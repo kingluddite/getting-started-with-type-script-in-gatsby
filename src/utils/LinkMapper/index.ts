@@ -1,3 +1,3 @@
-import LinkMapper from './LinkMapper';
+import linkMapper from './linkMapper';
 
-export default LinkMapper;
+export default linkMapper;

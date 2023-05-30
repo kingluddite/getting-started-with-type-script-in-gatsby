@@ -6,7 +6,7 @@ import Button from '@components/atoms/buttons/Button';
 import Tag from '@components/atoms/tags/Tag';
 
 // utility
-import truncateText from '@utils/truncateText';
+import truncateText from '@utils/truncateText/truncateText';
 
 // styles
 import { StyledContentContainer, StyledMetaContainer } from './styles';

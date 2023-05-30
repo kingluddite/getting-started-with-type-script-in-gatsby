@@ -3,17 +3,17 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // static data
-import navLinkData from '@utils/data/nav-links';
-import socialMediaData from '@utils/data/social-media';
+import navLinkData from '@utils/data/navLinks/navLinksData';
+import socialMediaData from '@utils/data/socialMedia/socialMediaData';
 
 // styles
 import { StyledFooter } from './styles';
 
 // images
 import AEFLogoLight from '@svg/aef-lightmode-logo.svg';
+import sitemapMapper from '@utils/sitemapMapper/sitemapMapper';
 
 // utils
-import SitemapMapper from '@utils/SitemapMapper';
 
 function Footer() {
   return (
@@ -35,12 +35,12 @@ function Footer() {
       {/* Render sitemap */}
       <ul className="sitemap">
         {/* Map over nav link data to render sitemap sections */}
-        {SitemapMapper(`About`, navLinkData.about)}
-        {SitemapMapper(`Engage`, navLinkData.engage)}
-        {SitemapMapper(`Programs`, navLinkData.programs)}
+        {sitemapMapper(`About`, navLinkData.about)}
+        {sitemapMapper(`Engage`, navLinkData.engage)}
+        {sitemapMapper(`Programs`, navLinkData.programs)}
 
         {/* Pass additional social media data to SitemapSectionMapper for "Connect" section */}
-        {SitemapMapper(`Connect`, navLinkData.forms, socialMediaData)}
+        {sitemapMapper(`Connect`, navLinkData.forms, socialMediaData)}
       </ul>
     </StyledFooter>
   );

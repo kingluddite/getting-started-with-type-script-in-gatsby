@@ -1,13 +1,13 @@
-export type ColorType = 'grey' | 'yellow';
+// export type ColorType = 'grey' | 'yellow';
 
 export interface MajorTagProps {
   text: string;
-  $color?: ColorType;
-  color?: ColorType;
+  $color?: string;
+  color?: string;
 }
 
 export interface StyledTagMajorProps {
   children: string;
-  $color?: ColorType;
-  color?: ColorType;
+  $color?: string;
+  color?: string;
 }

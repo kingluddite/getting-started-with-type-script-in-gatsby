@@ -1,8 +1,16 @@
-import { ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 
-export interface SolidButtonProps {
-  action: any;
-  actionType?: string;
-  children: ReactNode;
+type BaseButtonProps = {
+  actionType: 'link' | 'internal' | 'anchor' | 'external' | 'button';
   link?: string;
-}
+  action?: () => void;
+  children: React.ReactNode;
+};
+
+type ButtonActionProps = BaseButtonProps &
+  ButtonHTMLAttributes<HTMLButtonElement>;
+
+type AnchorActionProps = BaseButtonProps &
+  AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export type SolidButtonProps = ButtonActionProps | AnchorActionProps;

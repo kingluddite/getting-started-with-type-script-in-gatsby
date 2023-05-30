@@ -1,15 +1,4 @@
-export interface NavLinkItem {
-  type: 'gatsby' | 'external';
-  text: string;
-  url: string;
-}
-
-export interface NavLinkData {
-  about: NavLinkItem[];
-  engage: NavLinkItem[];
-  programs: NavLinkItem[];
-  forms: NavLinkItem[];
-}
+import { NavLinkData } from '@utils/data/navLinks/navLinksDataTypes';
 
 export interface SocialMediaData {
   url: string;

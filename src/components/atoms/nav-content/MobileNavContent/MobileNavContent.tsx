@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VisuallyHidden } from '@reach/visually-hidden';
 
 // utils
-import LinkMapper from '@utils/LinkMapper';
+import LinkMapper from '@utils/linkMapper';
 
 // images
 import AsifaLogo from '@images/asifa.png';
@@ -38,7 +38,9 @@ const MobileNavContent: React.FC<MobileNavContentProps> = ({
         {/* Toggle button to open/close the menu */}
         <StyledToggleButton
           type="button"
+          data-testid="toggle-button"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? `Close nav menu` : `Open nav menu`}
         >
           {/* Visually hidden text for screen readers */}
           <VisuallyHidden>

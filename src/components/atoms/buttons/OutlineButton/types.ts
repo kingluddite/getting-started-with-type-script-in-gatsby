@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 export interface OutlineButtonProps {
-  action: any;
-  actionType?: string;
+  action?: () => void;
+  actionType: 'link' | 'internal' | 'anchor' | 'external' | 'button';
   children: ReactNode;
   link?: string;
 }

@@ -10,7 +10,7 @@ import LayoutContainer from '@shared/layout/LayoutContainer';
 import HeroHeading from '@components/molecules/HeroHeading';
 import Button from '@components/atoms/buttons/Button';
 import FormInput from '@forms/FormInput';
-import netlifyDataEncoder from '@utils/netlifyDataEncoder';
+import netlifyDataEncoder from '@utils/netlifyDataEncoder/netlifyDataEncoder';
 import Logo from '@components/atoms/Logo';
 
 // images

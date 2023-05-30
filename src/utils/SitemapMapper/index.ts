@@ -1,3 +1,3 @@
-import SitemapMapper from './SitemapMapper';
+import SitemapMapper from './sitemapMapper';
 
 export default SitemapMapper;
