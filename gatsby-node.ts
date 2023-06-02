@@ -78,7 +78,7 @@ async function createPagesFromData({
 /**
  * Creates pages for past winners.
  */
-async function turnPastWinnersIntoPages({
+export async function turnPastWinnersIntoPages({
   graphql,
   actions,
 }: CreatePagesParams) {
@@ -118,7 +118,10 @@ async function turnPastWinnersIntoPages({
 /**
  * Creates pages for news.
  */
-async function turnNewsIntoPages({ graphql, actions }: CreatePagesParams) {
+export async function turnNewsIntoPages({
+  graphql,
+  actions,
+}: CreatePagesParams) {
   const newsTemplate = path.resolve(
     `./src/templates/NewsTemplate/NewsTemplate.tsx`,
   );
@@ -155,7 +158,10 @@ async function turnNewsIntoPages({ graphql, actions }: CreatePagesParams) {
 /**
  * Creates pages for events.
  */
-async function turnEventsIntoPages({ graphql, actions }: CreatePagesParams) {
+export async function turnEventsIntoPages({
+  graphql,
+  actions,
+}: CreatePagesParams) {
   const eventsTemplate = path.resolve(
     `./src/templates/EventTemplate/EventTemplate.tsx`,
   );

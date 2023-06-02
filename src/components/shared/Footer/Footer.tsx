@@ -11,7 +11,7 @@ import { StyledFooter } from './styles';
 
 // images
 import AEFLogoLight from '@svg/aef-lightmode-logo.svg';
-import sitemapMapper from '@utils/sitemapMapper/sitemapMapper';
+import sitemapMapper from '@utils/sitemapMapper/SitemapMapper';
 
 // utils
 

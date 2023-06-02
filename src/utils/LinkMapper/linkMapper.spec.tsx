@@ -23,6 +23,7 @@ describe(`linkMapper`, () => {
   ];
 
   it(`should render Link components for internal links`, () => {
+    // @ts-ignore
     const { getByText } = render(<>{linkMapper(mockData)}</>);
 
     const link1 = getByText(`Page 1`);
@@ -35,6 +36,7 @@ describe(`linkMapper`, () => {
   });
 
   it(`should render anchor tags for external links`, () => {
+    // @ts-ignore
     const { getByText } = render(<>{linkMapper(mockData)}</>);
 
     const externalLink = getByText(`External Link`);

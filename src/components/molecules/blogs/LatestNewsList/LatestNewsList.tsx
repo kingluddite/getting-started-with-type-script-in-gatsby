@@ -14,7 +14,7 @@ const LatestNewsList: React.FC<LatestNewsListProps> = ({ latestNewsBlog }) => {
   // Creating a local variable for easier access to the nodes array
   const newsArr = latestNewsBlog.nodes;
   return (
-    <StyledPostContainer>
+    <StyledPostContainer data-testid="post-card-container">
       {newsArr.map((l) => (
         <PostCard
           key={l.id}
@@ -26,6 +26,7 @@ const LatestNewsList: React.FC<LatestNewsListProps> = ({ latestNewsBlog }) => {
           to={`news/${l.slug.current}`}
           title={l.newsBlogTitle}
           description={l.newsContentExcerpt}
+          data-testid="post-card"
         />
       ))}
     </StyledPostContainer>

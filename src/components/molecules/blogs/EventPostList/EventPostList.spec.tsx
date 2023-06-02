@@ -64,8 +64,9 @@ describe(`EventPostList`, () => {
     };
 
     // Render the EventPostList component with updated mock data
+
     const { queryByText, queryByAltText } = render(
-      <EventPostList eventBlogs={updatedMockEventBlogs} />,
+      <EventPostList eventBlogs={updatedMockEventBlogs as any} />,
     );
 
     // Check if the past event is not rendered

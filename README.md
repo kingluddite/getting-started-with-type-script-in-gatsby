@@ -6,11 +6,15 @@ This README provides an overview of the package scripts defined in the `package.
 
 ## fix list
 
+// @ts-ignore
+
 - src/components/atoms/buttons/ScrollToTopButton/ScrollToTopButton.spec.tsx it `scrolls to top when clicked`
 - src/components/atoms/Logo/Logo.spec.tsx
 - src/components/atoms/nav-content/MobileNavContent/MobileNavContent.spec.tsx (get clicks to mock function and show that "close" and "open" text changes on aria)
 - src/utils/sitemapMapper/sitemapMapper.spec.ts - fix fontawesome
   and other commented out ts errors
+- src/components/molecules/blogs/LatestNewsList/LatestNewsList.spec.tsx
+- src/components/molecules/cards/BoardMemberCard/BoardMemberCard.spec.tsx
 
 ## List of Scripts
 

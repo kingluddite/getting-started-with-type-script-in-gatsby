@@ -27,8 +27,18 @@ function HeroHeading({ children, home = false }: HeroHeadingProps) {
       {/* Render the wing images on the homepage */}
       {home ? (
         <>
-          <img src={wing} className="wing wing-left" alt="" />
-          <img src={wing} className="wing wing-right" alt="" />
+          <img
+            src={wing}
+            className="wing wing-left"
+            alt=""
+            data-testid="wing-left"
+          />
+          <img
+            src={wing}
+            className="wing wing-right"
+            alt=""
+            data-testid="wing-right"
+          />
         </>
       ) : null}
       {/* Gradient effects */}
