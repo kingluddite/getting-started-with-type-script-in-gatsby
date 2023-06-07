@@ -163,6 +163,16 @@ These are the package scripts available in the AEF Brochure Site project. You ca
 $ pnpm run test -- --grep="YearBlock.spec.tsx"
 ```
 
+## prettier
+
+- `$ ga . && gcm 'feat(ui): fix all issues that did not match live site'`
+
+When you add and commit git commit runs because you need to have your commits structured a specific way or it will not commit - this keeps your code consistent
+
+- But you may get prettier formatting issues and for now (improve this later) you can fix all issues
+
+`$ prettier --write .`
+
 ## styled-components for development
 
 ### better debugging
