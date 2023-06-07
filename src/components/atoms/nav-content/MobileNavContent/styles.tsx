@@ -86,6 +86,19 @@ export const StyledToggleButton = styled.button`
     }
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
+    > div,
+    > div::before,
+    > div::after {
+      transition: none;
+      width: var(--size-1dn);
+      height: 3px;
+      border-radius: 5px;
+      background: var(--c-yellow-1);
+      position: absolute;
+    }
+  }
+
   > div,
   > div::before,
   > div::after {
