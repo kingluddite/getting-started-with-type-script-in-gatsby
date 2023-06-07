@@ -173,6 +173,8 @@ When you add and commit git commit runs because you need to have your commits st
 
 `$ prettier --write .`
 
+* There needs to be a better way as now i need to run this multiple times to save format and commit. it works now but it is not efficient as it can be.
+
 ## styled-components for development
 
 ### better debugging
