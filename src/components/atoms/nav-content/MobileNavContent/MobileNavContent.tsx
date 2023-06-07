@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VisuallyHidden } from '@reach/visually-hidden';
 
 // utils
-import LinkMapper from '@utils/linkMapper';
+import linkMapper from '@utils/linkMapper';
 
 // images
 import AsifaLogo from '@images/asifa.png';
@@ -59,7 +59,7 @@ const MobileNavContent: React.FC<MobileNavContentProps> = ({
           {/* Container for links in "About" section */}
           <StyledLinkContainer>
             {/* Render links using LinkMapper utility function */}
-            {LinkMapper(navLinkData.about)}
+            {linkMapper(navLinkData.about)}
           </StyledLinkContainer>
 
           {/* Heading for "Engage" section */}
@@ -67,7 +67,7 @@ const MobileNavContent: React.FC<MobileNavContentProps> = ({
           {/* Container for links in "Engage" section */}
           <StyledLinkContainer>
             {/* Render links using LinkMapper utility function */}
-            {LinkMapper(navLinkData.engage)}
+            {linkMapper(navLinkData.engage)}
           </StyledLinkContainer>
 
           {/* Heading for "Programs" section */}
@@ -75,7 +75,7 @@ const MobileNavContent: React.FC<MobileNavContentProps> = ({
           {/* Container for links in "Programs" section */}
           <StyledLinkContainer>
             {/* Render links using LinkMapper utility function */}
-            {LinkMapper(navLinkData.programs)}
+            {linkMapper(navLinkData.programs)}
           </StyledLinkContainer>
 
           {/* Heading for "Connect" section */}
@@ -83,7 +83,7 @@ const MobileNavContent: React.FC<MobileNavContentProps> = ({
           {/* Container for links in "Connect" section */}
           <StyledLinkContainer>
             {/* Render links using LinkMapper utility function */}
-            {LinkMapper(navLinkData.forms)}
+            {linkMapper(navLinkData.forms)}
           </StyledLinkContainer>
 
           {/* Container for social media links */}

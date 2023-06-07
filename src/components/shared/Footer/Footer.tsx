@@ -11,9 +11,9 @@ import { StyledFooter } from './styles';
 
 // images
 import AEFLogoLight from '@svg/aef-lightmode-logo.svg';
-import sitemapMapper from '@utils/sitemapMapper/sitemapMapper';
 
 // utils
+import sitemapMapper from '@utils/sitemapMapper';
 
 function Footer() {
   return (
