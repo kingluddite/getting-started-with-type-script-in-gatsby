@@ -13,7 +13,7 @@ import { StyledFooter } from './styles';
 import AEFLogoLight from '@svg/aef-lightmode-logo.svg';
 
 // utils
-import sitemapMapper from '@utils/sitemapMapper';
+import sitemapMapper from '@utils/sitemapMapper/sitemapMapper';
 
 function Footer() {
   return (
