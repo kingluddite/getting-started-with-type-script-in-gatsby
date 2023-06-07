@@ -190,7 +190,8 @@ async function turnEventsIntoPages({ graphql, actions }: CreatePagesParams) {
 }
 
 // GatsbyNode's createPages function
-const createPages: GatsbyNode['createPages'] = async (params) => {
+// By exporting the createPages function, you ensure that Gatsby can access and execute it properly
+export const createPages: GatsbyNode['createPages'] = async (params) => {
   try {
     // Create pages for news, events, and past winners
     await Promise.all([
