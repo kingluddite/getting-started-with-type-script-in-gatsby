@@ -2,6 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm validate-branch-name
-pnpm lint:fix
 pnpm lint-staged
+pnpm lint:fix
 pnpm run coverage
