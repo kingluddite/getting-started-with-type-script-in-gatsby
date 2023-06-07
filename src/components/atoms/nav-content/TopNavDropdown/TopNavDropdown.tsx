@@ -25,7 +25,7 @@ const TopNavDropdown: React.FC<TopNavDropdownProps> = ({
   // Check if the current page is one of the pages in the dropdown menu.
   const onCurrentPage =
     dropdownLinkData &&
-    dropdownLinkData.some((page: any) => page.url === location.pathname);
+    dropdownLinkData.some((page: any) => page.url === location?.pathname || ``);
 
   return (
     <Menu>

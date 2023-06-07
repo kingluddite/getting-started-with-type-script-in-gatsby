@@ -53,7 +53,7 @@ function Layout({ children }: LayoutProps) {
           <div>
             <SkipNavLink />
             <Nav
-              location={location}
+              location={typeof window !== `undefined` ? location : undefined}
               menuOpen={menuOpen}
               setMenuOpen={setMenuOpen}
             />
