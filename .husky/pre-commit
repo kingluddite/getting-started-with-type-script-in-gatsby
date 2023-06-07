@@ -3,5 +3,4 @@
 
 pnpm validate-branch-name
 pnpm lint-staged
-pnpm lint:fix
 pnpm run coverage

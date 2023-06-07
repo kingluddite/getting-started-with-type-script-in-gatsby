@@ -58,6 +58,13 @@ export const StyledSitemapMapper = styled.li`
         transition: none;
       }
     }
+    @media screen and (prefers-reduced-motion: reduce) {
+      &:hover,
+      &:focus {
+        color: var(--c-yellow-1);
+        transition: none;
+      }
+    }
 
     &:hover,
     &:focus {
