@@ -37,7 +37,8 @@ const CardContent: React.FC<CardContentProps> = ({
         {tagText && (
           <Tag
             type="primary"
-            color={cardType === `pastEvent` ? `grey` : undefined}
+            // add below line back if you want past events to be grey and new events to be yellow
+            // color={cardType === `pastEvent` ? `grey` : undefined}
             text={tagText}
           />
         )}

@@ -17,7 +17,8 @@ const PastScholarshipWinnerTemplate: React.FC<
   PastScholarshipWinnerTemplateProps
 > = ({ data }) => {
   const { pastWinnerTitle, pastWinnerImg, publishDate, pastWinnerTextBlock } =
-    data.pastWinnerSinglePage;
+    data.pastWinnerBlog;
+
   return (
     <>
       <SEO title={pastWinnerTitle} />

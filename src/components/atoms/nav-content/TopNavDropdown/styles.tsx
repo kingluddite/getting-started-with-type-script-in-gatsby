@@ -83,6 +83,26 @@ export const StyledMenuList = styled(MenuList)`
     }
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
+    &[data-reach-menu-list],
+    &[data-reach-menu-items] {
+      display: flex;
+      flex-direction: column;
+      grid-gap: var(--size-1);
+      transition: none;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &[data-reach-menu-list],
+    &[data-reach-menu-items] {
+      display: flex;
+      flex-direction: column;
+      grid-gap: var(--size-1);
+      transition: none;
+    }
+  }
+
   &[data-reach-menu-list],
   &[data-reach-menu-items] {
     display: flex;

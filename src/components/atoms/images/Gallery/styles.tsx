@@ -31,7 +31,9 @@ export const StyledGallery = styled.section`
     gap: var(--masonry-gutter);
   }
   /* stylelint-enable */
+
   @media (prefers-reduced-motion: no-preference) {
+    /* stylelint-disable declaration-empty-line-before */
     .gatsby-image-wrapper {
       transition: transform 0.3s var(--animation-bezier);
     }

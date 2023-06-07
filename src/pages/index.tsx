@@ -18,7 +18,7 @@ import Button from '@components/atoms/buttons/Button';
 import SEO from '@components/shared/SEO';
 import LayoutContainer from '@components/shared/layout/LayoutContainer';
 import MediumCard from '@components/molecules/cards/MediumCard';
-// import Gallery from '@components/atoms/images/Gallery';
+import Gallery from '@components/atoms/images/Gallery';
 
 import EventPostList from '@components/molecules/blogs/EventPostList';
 import LatestNewsList from '@components/molecules/blogs/LatestNewsList';
@@ -51,10 +51,10 @@ const HomePage = ({
     whatWeProvideManyHeading,
     whatWeProvideBlock,
     newsManyHeading,
-    // hasGallery,
-    // galleryManyBlock,
+    hasGallery,
+    galleryManyBlock,
   } = homePage;
-
+  console.log(newsManyHeading);
   // Set up state for the video player
   const [videoOpened, setVideoOpened] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -184,27 +184,17 @@ const HomePage = ({
           <StyledSectionTitle>{newsManyHeading}</StyledSectionTitle>
           <StyledLatestNewsContainer>
             {/* short news list */}
-            <LatestNewsList latestNewsBlog={latestNewsBlog} />
+            <LatestNewsList
+              latestNewsBlog={latestNewsBlog}
+              isOnHomePage={true}
+            />
             {/* short events list */}
             <EventPostList eventBlogs={eventBlogs} />
           </StyledLatestNewsContainer>
         </StyledSection>
 
         <StyledSection>
-          {/* {hasGallery && galleryManyBlock ? ( // Conditional rendering of a Gallery component if there's a gallery available
-            <Gallery
-              images={
-                // Mapping over an array of objects to create images for the gallery
-                galleryManyBlock.map((image) => ({
-                  imageData: image.asset.gatsbyImageData,
-                  alt: image.alt,
-                  loading: `lazy`,
-                  className: `gallery-image`,
-                  style: { maxWidth: `100%` },
-                })) as GalleryProps['images']
-              }
-            />
-          ) : null} */}
+          {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
         </StyledSection>
       </LayoutContainer>
     </>
@@ -237,6 +227,7 @@ export const query = graphql`
           alt
         }
       }
+      newsManyHeading
       hasGallery
       galleryManyBlock {
         alt

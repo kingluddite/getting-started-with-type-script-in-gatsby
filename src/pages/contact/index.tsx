@@ -10,11 +10,11 @@ import LayoutContainer from '@shared/layout/LayoutContainer';
 import HeroHeading from '@components/molecules/HeroHeading';
 import Button from '@components/atoms/buttons/Button';
 import FormInput from '@forms/FormInput';
-// import Gallery from '../components/atoms/Gallery';
 import netlifyDataEncoder from '@utils/netlifyDataEncoder/netlifyDataEncoder';
 import Logo from '@components/atoms/Logo';
 
 // images
+import Gallery from '@components/atoms/images/Gallery';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // styles
@@ -42,8 +42,8 @@ function ContactPage({ data }: { data: ContactPageQuery }) {
     subheading,
     instructions,
     pageImageBlock,
-    // galleryManyBlock,
-    // hasGallery,
+    galleryManyBlock,
+    hasGallery,
   } = data.contactPage;
 
   const formSubmit: SubmitHandler<FieldValues> = (formData, e) => {
@@ -147,7 +147,7 @@ function ContactPage({ data }: { data: ContactPageQuery }) {
           </StyledFormContent>
         </StyledForm>
         <StyledSection>
-          {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
+          {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
         </StyledSection>
       </LayoutContainer>
     </>

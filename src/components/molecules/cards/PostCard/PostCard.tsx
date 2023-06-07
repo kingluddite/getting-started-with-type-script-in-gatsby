@@ -1,26 +1,23 @@
 import React from 'react';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { getImage } from 'gatsby-plugin-image';
-
-// components
-import MetaContent from '../../../atoms/MetaContent/MetaContent';
-import TextContent from '../../../atoms/TextContent/TextContent';
-
-// images
-import DefaultThumbnailImage from '../../../atoms/images/DefaultThumbnailImage';
-
-// styles
+import DefaultThumbnailImage from '@components/atoms/images/DefaultThumbnailImage';
+import Tag from '@components/atoms/tags/Tag';
+import truncateText from '@utils/truncateText/truncateText';
 import {
+  StyledContentContainer,
+  StyledFontAwesomeIcon,
   StyledPostCardContainer,
   StyledPostCardImg,
-  StyledFontAwesomeIcon,
 } from './styles';
-import { StyledContentContainer } from '../CardContent/styles';
+import { StyledMetaContainer } from '@components/atoms/MetaContent/styles';
 
-// types
-import { PostCardProps } from './types';
+import {
+  StyledTextContainer,
+  StyledTextHeading,
+} from '@components/atoms/TextContent/styles';
 
-function PostCard({
+export default function PostCard({
   type,
   to,
   image,
@@ -29,53 +26,34 @@ function PostCard({
   tagText,
   title,
   description,
-}: PostCardProps) {
-  // Create a new Date object from the date string
-  const dateObj = new Date(date);
-
-  const postImage = getImage(image);
-
-  if (!postImage) {
-    return null; // or return a placeholder image
-  }
-
+  isOnHomePage,
+}) {
   return (
     <StyledPostCardContainer to={to} $type={type}>
-      {/* Use a fragment to conditionally render the image */}
-      {type !== `tomsBlog` && (
-        <>
-          {image ? (
-            <StyledPostCardImg
-              // Use Gatsby's getImage function to get the optimized image
-              image={postImage}
-              // Set the height, width, and border radius inline
-              style={{
-                height: 134,
-                width: 200,
-                borderRadius: `var(--radius-md)`,
-              }}
-              // Use objectFit="contain" to fit the image inside the container
-              objectFit="contain"
-              alt={altText || ``}
-            />
-          ) : (
-            <DefaultThumbnailImage
-              height={134}
-              width={200}
-              borderRadius="var(--radius-md)"
-            />
-          )}
-        </>
-      )}
-      <StyledContentContainer>
-        {/* Pass the date object to the MetaContent component */}
-        {tagText && <MetaContent tag={tagText} date={dateObj} />}
+      {type !== `tomsBlog` &&
+        (image ? (
+          <StyledPostCardImg
+            image={getImage(image)}
+            // used GatsbyImage docs to override this default value and show nice looking image on news cards on home page
+            objectFit="contain"
+            alt={altText}
+          />
+        ) : (
+          <DefaultThumbnailImage
+            height={134}
+            width={200}
+            borderRadius="var(--radius-md)"
+          />
+        ))}
+      <StyledContentContainer isOnHomePage={isOnHomePage}>
+        {tagText && <MetaContent tag={tagText} date={date} />}
         <TextContent
           type={type}
           heading={title}
           excerpt={description}
           charLimitHeading={37}
           charLimitExcerpt={54}
+          isOnHomePage={isOnHomePage}
         />
       </StyledContentContainer>
       <StyledFontAwesomeIcon className="minor-icon-right" icon={faAngleRight} />
@@ -83,4 +61,44 @@ function PostCard({
   );
 }
 
-export default PostCard;
+function MetaContent({ tag, date }) {
+  return (
+    <StyledMetaContainer>
+      <Tag type="primary" text={tag} color="var(--c-yellow-1)" />
+      <time dateTime={date}>{date}</time>
+    </StyledMetaContainer>
+  );
+}
+
+function TextContent({
+  type,
+  heading,
+  excerpt,
+  charLimitHeading,
+  charLimitExcerpt,
+  isOnHomePage,
+}) {
+  switch (type) {
+    case `news`:
+      return (
+        <StyledTextContainer>
+          <StyledTextHeading title={heading}>
+            {truncateText(charLimitHeading, heading)}
+          </StyledTextHeading>
+          {!isOnHomePage && (
+            <p title={excerpt}>{truncateText(charLimitExcerpt, excerpt)}</p>
+          )}
+          {/* <p className="read-more-excerpt">(READ MORE)</p> */}
+        </StyledTextContainer>
+      );
+    default:
+      return (
+        <StyledTextContainer $type={type}>
+          <StyledTextHeading $type={type} title={heading}>
+            {truncateText(charLimitHeading, heading)}
+          </StyledTextHeading>
+          <p title={excerpt}>{truncateText(charLimitExcerpt, excerpt)}</p>
+        </StyledTextContainer>
+      );
+  }
+}

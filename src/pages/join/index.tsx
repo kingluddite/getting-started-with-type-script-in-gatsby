@@ -14,7 +14,7 @@ import netlifyDataEncoder from '@utils/netlifyDataEncoder/netlifyDataEncoder';
 import Logo from '@components/atoms/Logo';
 
 // images
-// import Gallery from '../components/atoms/Gallery';
+import Gallery from '@components/atoms/images/Gallery';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 import {
   StyledForm,
@@ -40,8 +40,8 @@ function JoinPage({ data }: { data: JoinPageQuery }) {
     subheading,
     instructions,
     pageImageBlock,
-    // galleryManyBlock,
-    // hasGallery,
+    galleryManyBlock,
+    hasGallery,
   } = data.joinPage;
 
   const formSubmit: SubmitHandler<FieldValues> = (formData, e) => {
@@ -178,7 +178,7 @@ function JoinPage({ data }: { data: JoinPageQuery }) {
         </StyledForm>
 
         <StyledSection>
-          {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
+          {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
         </StyledSection>
       </LayoutContainer>
     </>

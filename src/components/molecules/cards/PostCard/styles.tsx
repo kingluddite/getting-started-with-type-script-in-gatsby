@@ -4,6 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { css } from 'styled-components';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
+export const StyledContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: var(--size-dual-nudge);
+  margin: 0 auto;
+`;
+
 export const activeCardStyles = css`
   background: var(--c-white);
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%), 0 16px 24px rgb(0 0 0 / 10%);

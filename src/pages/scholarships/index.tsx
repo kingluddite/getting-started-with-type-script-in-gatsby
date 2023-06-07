@@ -12,16 +12,16 @@ import Button from '@components/atoms/buttons/Button';
 import Logo from '@components/atoms/Logo';
 
 // images
-// import Gallery from '../components/atoms/Gallery';
+import Gallery from '@components/atoms/images/Gallery';
 import LayoutContainer from '@shared/layout/LayoutContainer';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
 // types
 import { ScholarshipsPageQuery } from './types';
+import { StyledSection } from '@pages/home/styles';
 
 function StudentScholarshipPage({ data }: { data: ScholarshipsPageQuery }) {
   const {
-    // name,
     headingOne,
     subheading,
     headingOneButtonText,
@@ -35,8 +35,8 @@ function StudentScholarshipPage({ data }: { data: ScholarshipsPageQuery }) {
     scholarshipAppRequirementBlock,
     scholarshipSelectionBlock,
     scholarshipRequirementForStudentBlock,
-    // galleryManyBlock,
-    // hasGallery,
+    galleryManyBlock,
+    hasGallery,
     pageImageBlock,
   } = data.scholarshipPage;
 
@@ -253,7 +253,7 @@ function StudentScholarshipPage({ data }: { data: ScholarshipsPageQuery }) {
         </ContentBlock>
         <ContentBlock
           heading={
-            scholarshipRequirementForStudentBlock?.scholarshipRequirementBlockHeading ||
+            scholarshipRequirementForStudentBlock?.scholarshipRequirementForStudentBlockHeading ||
             undefined
           }
           showImage={
@@ -296,10 +296,16 @@ function StudentScholarshipPage({ data }: { data: ScholarshipsPageQuery }) {
           }
         >
           {scholarshipRequirementForStudentBlock && (
-            <PortableText value={scholarshipRequirementForStudentBlock} />
+            <PortableText
+              value={
+                scholarshipRequirementForStudentBlock.scholarshipRequirementForStudentTextBlock
+              }
+            />
           )}
         </ContentBlock>
-        {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
+        <StyledSection>
+          {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
+        </StyledSection>
       </LayoutContainer>
     </>
   );

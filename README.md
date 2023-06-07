@@ -163,6 +163,33 @@ These are the package scripts available in the AEF Brochure Site project. You ca
 $ pnpm run test -- --grep="YearBlock.spec.tsx"
 ```
 
+## styled-components for development
+
+### better debugging
+
+- This option enhances the attached CSS class name on each component with richer output to help identify your components in the DOM without React DevTools. In your page source you'll see: `<button class="Button-asdf123 asdf123" />` instead of just `<button class="asdf123" />`.
+
+i added .babelrc
+
+```
+{
+  "presets": ["babel-preset-gatsby"],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": true,
+        "fileName": false
+      }
+    ]
+  ]
+}
+```
+
+### resources
+
+https://styled-components.com/docs/tooling
+
 ## Troubleshooting
 
 - if you see a test error after thinking you fixed it, run all tests again and update the test results and fix the issue that was broken

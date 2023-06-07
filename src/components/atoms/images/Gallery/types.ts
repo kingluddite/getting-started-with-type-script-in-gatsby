@@ -5,9 +5,13 @@ export type GalleryProps = {
   images: Array<{
     id: string;
     alt?: string;
-    imageData?: IGatsbyImageData;
+    asset: {
+      id: string;
+      gatsbyImageData: IGatsbyImageData;
+    };
     loading?: 'lazy' | 'eager';
     className?: string;
     style?: React.CSSProperties;
   }> | null;
+  type?: string;
 };

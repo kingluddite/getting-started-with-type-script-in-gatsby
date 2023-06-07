@@ -14,6 +14,6 @@ export interface PastScholarshipWinnerTemplateData {
 
 export interface PastScholarshipWinnerTemplateProps extends PageProps {
   data: {
-    pastWinnerSinglePage: PastScholarshipWinnerTemplateData;
+    pastWinnerBlog: PastScholarshipWinnerTemplateData;
   };
 }

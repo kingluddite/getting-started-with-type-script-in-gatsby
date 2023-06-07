@@ -12,7 +12,7 @@ import Logo from '@components/atoms/Logo';
 
 // images
 import ImageContainer from '@components/atoms/images/ImageContainer';
-// import Gallery from '../components/atoms/Gallery';
+import Gallery from '@components/atoms/images/Gallery';
 
 // styles
 import { StyledFAQ } from './styles';
@@ -34,8 +34,8 @@ function ForumPage({ data }: { data: ForumPageQuery }) {
     howToGetInvolvedBlock,
     faqManyHeading,
     faqManyBlock,
-    // galleryManyBlock,
-    // hasGallery,
+    galleryManyBlock,
+    hasGallery,
     pageImageBlock,
   } = data.forumPage;
 
@@ -173,7 +173,7 @@ function ForumPage({ data }: { data: ForumPageQuery }) {
           </StyledFAQ>
         </ContentBlock>
 
-        {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
+        {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
       </LayoutContainer>
     </>
   );

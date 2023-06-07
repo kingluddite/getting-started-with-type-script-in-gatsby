@@ -78,7 +78,7 @@ async function createPagesFromData({
 /**
  * Creates pages for past winners.
  */
-export async function turnPastWinnersIntoPages({
+async function turnPastWinnersIntoPages({
   graphql,
   actions,
 }: CreatePagesParams) {
@@ -118,10 +118,7 @@ export async function turnPastWinnersIntoPages({
 /**
  * Creates pages for news.
  */
-export async function turnNewsIntoPages({
-  graphql,
-  actions,
-}: CreatePagesParams) {
+async function turnNewsIntoPages({ graphql, actions }: CreatePagesParams) {
   const newsTemplate = path.resolve(
     `./src/templates/NewsTemplate/NewsTemplate.tsx`,
   );
@@ -158,10 +155,7 @@ export async function turnNewsIntoPages({
 /**
  * Creates pages for events.
  */
-export async function turnEventsIntoPages({
-  graphql,
-  actions,
-}: CreatePagesParams) {
+async function turnEventsIntoPages({ graphql, actions }: CreatePagesParams) {
   const eventsTemplate = path.resolve(
     `./src/templates/EventTemplate/EventTemplate.tsx`,
   );
@@ -196,7 +190,7 @@ export async function turnEventsIntoPages({
 }
 
 // GatsbyNode's createPages function
-export const createPages: GatsbyNode['createPages'] = async (params) => {
+const createPages: GatsbyNode['createPages'] = async (params) => {
   try {
     // Create pages for news, events, and past winners
     await Promise.all([

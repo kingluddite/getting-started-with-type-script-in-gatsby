@@ -10,7 +10,10 @@ import { StyledPostContainer } from './styles';
 // types
 import type { LatestNewsListProps } from './types';
 
-const LatestNewsList: React.FC<LatestNewsListProps> = ({ latestNewsBlog }) => {
+const LatestNewsList: React.FC<LatestNewsListProps> = ({
+  latestNewsBlog,
+  isOnHomePage,
+}) => {
   // Creating a local variable for easier access to the nodes array
   const newsArr = latestNewsBlog.nodes;
   return (
@@ -27,6 +30,7 @@ const LatestNewsList: React.FC<LatestNewsListProps> = ({ latestNewsBlog }) => {
           title={l.newsBlogTitle}
           description={l.newsContentExcerpt}
           data-testid="post-card"
+          isOnHomePage={isOnHomePage}
         />
       ))}
     </StyledPostContainer>

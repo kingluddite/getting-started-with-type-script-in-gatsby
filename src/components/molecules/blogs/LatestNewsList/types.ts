@@ -20,4 +20,5 @@ export interface LatestNewsListProps {
       newsContentExcerpt?: string;
     }>;
   };
+  isOnHomePage?: boolean;
 }

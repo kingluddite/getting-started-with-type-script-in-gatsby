@@ -145,6 +145,27 @@ export interface ScholarshipsPageQuery {
         };
       };
     };
+    galleryManyBlock: {
+      id: string;
+      alt?: string;
+      asset: {
+        id: string;
+        gatsbyImageData: any;
+      };
+      crop: {
+        top: number;
+        right: number;
+        left: number;
+        bottom: number;
+      };
+      hotspot: {
+        y: number;
+        x: number;
+        width: number;
+        height: number;
+      };
+    }[];
+    hasGallery: boolean;
     quoteManyBlock?: {
       id: string;
       quoteContent: string;

@@ -7,4 +7,5 @@ export interface PostCardProps {
   tagText: string;
   title: string;
   description?: string;
+  pastWinners?: any;
 }

@@ -9,7 +9,7 @@ import SEO from '@shared/SEO';
 import HeroHeading from '@components/molecules/HeroHeading';
 import ContentBlock from '@components/molecules/ContentBlock';
 import YearBlock from '@blocks/YearBlock';
-// import Gallery from '@components/atoms/Gallery';
+import Gallery from '@components/atoms/images/Gallery';
 import Logo from '@components/atoms/Logo';
 import ImageContainer from '@components/atoms/images/ImageContainer';
 
@@ -24,8 +24,8 @@ function HistoryPage({ data }: { data: HistoryPageQuery }) {
     // name,
     headingOne,
     subheading,
-    // galleryManyBlock,
-    // hasGallery,
+    galleryManyBlock,
+    hasGallery,
     // headingTwo,
     // timelineImg,
     quoteManyBlock,
@@ -48,7 +48,7 @@ function HistoryPage({ data }: { data: HistoryPageQuery }) {
         ) : null}
       </HeroHeading>
       <LayoutContainer hasSectionGaps>
-        {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
+        {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
         {quoteManyBlock && (
           <ContentBlock>
             {quoteManyBlock.map((q) => (

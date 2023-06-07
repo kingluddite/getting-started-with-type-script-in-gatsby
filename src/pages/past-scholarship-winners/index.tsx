@@ -28,6 +28,7 @@ import {
   PastWinnersPageContext,
   PastWinnersPageQuery,
 } from './types';
+import Gallery from '@components/atoms/images/Gallery';
 
 const PastWinnersPage: React.FC<
   PageProps<PastWinnersPageQuery, PastWinnersPageContext>
@@ -36,8 +37,8 @@ const PastWinnersPage: React.FC<
     // name,
     headingOne,
     subheading,
-    // galleryManyBlock,
-    // hasGallery,
+    galleryManyBlock,
+    hasGallery,
     pageImageBlock,
   } = data.pastWinnerPage;
 
@@ -146,7 +147,7 @@ const PastWinnersPage: React.FC<
           </StyledSection>
         ) : null}
         <StyledSection>
-          {/* {hasGallery ? <Gallery images={galleryManyBlock} /> : null} */}
+          {hasGallery ? <Gallery images={galleryManyBlock} /> : null}
         </StyledSection>
       </LayoutContainer>
     </>

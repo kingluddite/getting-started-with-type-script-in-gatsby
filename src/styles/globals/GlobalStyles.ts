@@ -142,7 +142,6 @@ main {
 [data-reach-skip-link],
 [data-reach-skip-link]:focus {
   z-index: 1000;
-}
-`;
+}`;
 
 export default GlobalStyles;
