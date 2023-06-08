@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VisuallyHidden } from '@reach/visually-hidden';
 
 // utils
-import linkMapper from '@utils/linkMapper/linkMapper';
+import linkMapper from '@utils/linkMappers/linkMapper';
 
 // images
 import AsifaLogo from '@images/asifa.png';

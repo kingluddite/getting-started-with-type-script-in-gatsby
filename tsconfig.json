@@ -17,8 +17,6 @@
       "@svg/*": ["assets/svg/*"],
       "@shared/*": ["components/shared/*"],
       "@utils/*": ["utils/*"],
-      "@utils/sitemapMapper/*": ["utils/sitemapMapper/*"],
-      "@utils/linkMapper/*": ["utils/linkMapper/*"],
       "@pages/*": ["pages/*"],
       "@forms/*": ["components/atoms/forms/*"],
       "@blocks/*": ["components/atoms/blocks/*"],
